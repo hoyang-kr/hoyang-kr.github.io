@@ -49,3 +49,31 @@ export const homepageFeaturedProductConfigs: readonly HomepageFeaturedProductCon
       id: "hg05",
     },
   ] as const;
+
+export const homepageSelectedProductConfigs = [
+  {
+    id: "belair-towel-bar",
+  },
+  {
+    id: "batuta-paper-holder",
+    displayName: "벨레어 휴지걸이",
+  },
+  {
+    id: "concord-towel-bar",
+  },
+  {
+    id: "concord-paper-holder",
+  },
+  {
+    id: "hg110s",
+  },
+  {
+    id: "hg112s",
+  },
+  {
+    id: "hg822s",
+  },
+  {
+    id: "hg9992",
+  },
+] as const satisfies readonly HomepageFeaturedProductConfig[];

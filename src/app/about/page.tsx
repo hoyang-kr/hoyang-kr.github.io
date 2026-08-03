@@ -94,7 +94,7 @@ export default function AboutPage() {
           ))}
         </div>
         <div className="mt-12 flex justify-end">
-          <Link className="text-link" href="/products">
+          <Link className="text-link inline-flex" href="/products">
             제품 둘러보기
             <ArrowRightIcon className="size-4" />
           </Link>

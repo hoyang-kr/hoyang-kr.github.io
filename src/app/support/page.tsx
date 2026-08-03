@@ -95,7 +95,7 @@ export default function SupportPage() {
                 </p>
               </div>
               <Link
-                className="text-link w-fit md:justify-self-end"
+                className="text-link inline-flex w-fit md:justify-self-end"
                 href={section.href}
               >
                 {section.action}

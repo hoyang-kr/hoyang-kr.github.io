@@ -9,16 +9,16 @@ export function LanguageSelector({ mobile = false }: { mobile?: boolean }) {
       aria-label={locale === "ko" ? "언어 선택" : "Select language"}
       className={
         mobile
-          ? "flex items-center gap-2 border-b border-line py-5 text-xs"
-          : "flex items-center gap-1.5 text-xs"
+          ? "flex min-h-12 items-center gap-2 border-b border-line py-4 text-xs"
+          : "flex min-h-11 items-center gap-1 text-[11px]"
       }
       role="group"
     >
       <button
         aria-pressed={locale === "ko"}
-        className={
+        className={`flex min-h-11 min-w-7 items-center justify-center ${
           locale === "ko" ? "font-bold text-brand" : "text-muted hover:text-ink"
-        }
+        }`}
         onClick={() => setLocale("ko")}
         type="button"
       >
@@ -29,9 +29,9 @@ export function LanguageSelector({ mobile = false }: { mobile?: boolean }) {
       </span>
       <button
         aria-pressed={locale === "en"}
-        className={
+        className={`flex min-h-11 min-w-7 items-center justify-center ${
           locale === "en" ? "font-bold text-brand" : "text-muted hover:text-ink"
-        }
+        }`}
         onClick={() => setLocale("en")}
         type="button"
       >

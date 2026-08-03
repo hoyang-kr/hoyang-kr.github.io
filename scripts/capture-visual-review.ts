@@ -10,7 +10,9 @@ import {
 } from "playwright";
 
 const projectRoot = resolve(fileURLToPath(new URL("..", import.meta.url)));
-const screenshotDirectory = resolve(projectRoot, "docs/screenshots");
+const screenshotDirectory = process.env.REVIEW_SCREENSHOT_DIR
+  ? resolve(process.env.REVIEW_SCREENSHOT_DIR)
+  : resolve(projectRoot, "docs/screenshots");
 const baseUrl = process.env.REVIEW_BASE_URL ?? "http://localhost:3100";
 const consoleErrors: string[] = [];
 const failedRequests: string[] = [];
@@ -83,6 +85,7 @@ async function main() {
     await captureHomepageSections(desktop);
     await captureCatalogUpdates(desktop);
     await captureRequestedChecks(browser);
+    await captureHomepageAcceptance(browser);
     await captureGlobalSearchReview(browser);
     await desktop.close();
     await mobile.close();
@@ -232,9 +235,10 @@ async function captureRequestedCatalogRefresh(
   const desktop = await preparedPage(desktopContext, "desktop");
   await visit(desktop, "/");
 
-  const categorySection = desktop.locator("section").filter({
-    has: desktop.getByRole("heading", { name: "Browse by category" }),
-  });
+  const categorySection = desktop
+    .locator("section")
+    .filter({ hasText: "Browse by category" })
+    .first();
   await screenshotElement(
     categorySection,
     "60-home-category-representatives.png",
@@ -242,16 +246,15 @@ async function captureRequestedCatalogRefresh(
     "HG112S recessed holder and HG999-2 shaving mirror category covers",
   );
 
-  const coordinatedSection = desktop.locator("section").filter({
-    has: desktop.getByRole("heading", {
-      name: "하나의 공간으로 이어지는 구성",
-    }),
-  });
+  const collectionStory = desktop
+    .locator("section")
+    .filter({ hasText: "Featured collection" })
+    .first();
   await screenshotElement(
-    coordinatedSection,
-    "61-home-coordinated-satin-towel-bars.png",
+    collectionStory,
+    "61-home-featured-concord-story.png",
     "desktop",
-    "Belair, Brio, and Concord satin towel bars",
+    "Asymmetrical Concord featured-collection story",
   );
 
   await visit(desktop, "/collections");
@@ -455,7 +458,7 @@ async function captureLocalizedHome(
   const page = await preparedPage(context, viewport);
   await visit(page, "/");
   await page.locator('html[lang="en"]').waitFor();
-  await page.getByRole("heading", { name: "Browse by category" }).waitFor();
+  await page.getByText("Browse by category", { exact: true }).waitFor();
   await screenshot(page, filename, viewport, true, "English homepage");
   await page.close();
 }
@@ -464,8 +467,9 @@ async function captureHomepageSections(context: BrowserContext) {
   const page = await preparedPage(context, "desktop");
   await visit(page, "/");
   const sections = [
-    ["21-coordinated-towel-bars-desktop.png", "하나의 공간으로 이어지는 구성"],
+    ["21-featured-collection-desktop.png", "Featured collection"],
     ["22-category-navigation-desktop.png", "Browse by category"],
+    ["29-selected-products-desktop.png", "Selected products"],
   ] as const;
   for (const [filename, heading] of sections) {
     const section = page
@@ -499,7 +503,7 @@ async function captureCatalogUpdates(context: BrowserContext) {
     path: "docs/screenshots/23-hero-branding-desktop.png",
     viewport: "desktop",
     fullPage: false,
-    state: "larger logo, EssentialBathroomStorage, reduced Korean heading",
+    state: "Quiet architectural hero with larger Korean headline",
   });
 
   await visit(page, "/products");
@@ -527,18 +531,28 @@ async function captureCatalogUpdates(context: BrowserContext) {
 }
 
 async function captureRequestedChecks(browser: Browser) {
-  for (const width of [375, 768, 1024, 1440]) {
+  for (const width of [390, 768, 1024, 1280, 1440]) {
     const context = await browser.newContext({
-      viewport: { width, height: width === 375 ? 812 : 1000 },
+      viewport: {
+        width,
+        height:
+          width === 390
+            ? 844
+            : width === 768
+              ? 1024
+              : width === 1440
+                ? 1000
+                : 900,
+      },
       colorScheme: "light",
       reducedMotion: "reduce",
       locale: "ko-KR",
-      isMobile: width === 375,
-      hasTouch: width === 375,
+      isMobile: width === 390,
+      hasTouch: width === 390,
     });
     const page = await preparedPage(
       context,
-      width === 375 ? "mobile" : "desktop",
+      width === 390 ? "mobile" : "desktop",
     );
     await visit(page, "/");
     const hero = page.locator("main > section").first();
@@ -550,9 +564,9 @@ async function captureRequestedChecks(browser: Browser) {
     captures.push({
       filename,
       path: `docs/screenshots/${filename}`,
-      viewport: width === 375 ? "mobile" : "desktop",
+      viewport: width === 390 ? "mobile" : "desktop",
       fullPage: false,
-      state: `Homepage hero and EssentialBathroomStorage at ${width}px`,
+      state: `Homepage editorial hero at ${width}px`,
     });
     await page.close();
     await context.close();
@@ -566,17 +580,19 @@ async function captureRequestedChecks(browser: Browser) {
   });
   const page = await preparedPage(desktop, "desktop");
   await visit(page, "/");
-  const heroStatement = page.locator('[aria-label="EssentialBathroomStorage"]');
+  const heroStatement = page.getByText("HOYANG BATHROOM COLLECTION", {
+    exact: true,
+  });
   await heroStatement.screenshot({
-    path: resolve(screenshotDirectory, "40-essential-storage-closeup.png"),
+    path: resolve(screenshotDirectory, "40-hero-eyebrow-closeup.png"),
     animations: "disabled",
   });
   captures.push({
-    filename: "40-essential-storage-closeup.png",
-    path: "docs/screenshots/40-essential-storage-closeup.png",
+    filename: "40-hero-eyebrow-closeup.png",
+    path: "docs/screenshots/40-hero-eyebrow-closeup.png",
     viewport: "desktop",
     fullPage: false,
-    state: "EssentialBathroomStorage close-up",
+    state: "HOYANG bathroom collection eyebrow close-up",
   });
 
   const categorySection = page
@@ -723,6 +739,79 @@ async function captureRequestedChecks(browser: Browser) {
   await mobile.close();
 }
 
+async function captureHomepageAcceptance(browser: Browser) {
+  const viewports = [
+    { width: 390, height: 844 },
+    { width: 768, height: 1024 },
+    { width: 1024, height: 900 },
+    { width: 1280, height: 900 },
+    { width: 1440, height: 1000 },
+  ] as const;
+
+  for (const { width, height } of viewports) {
+    const mobileViewport = width < 1024;
+    const context = await browser.newContext({
+      viewport: { width, height },
+      colorScheme: "light",
+      reducedMotion: "reduce",
+      locale: "ko-KR",
+      isMobile: width === 390,
+      hasTouch: width === 390,
+    });
+    const page = await preparedPage(
+      context,
+      mobileViewport ? "mobile" : "desktop",
+    );
+    await visit(page, "/");
+
+    const editorialCards = page.locator(
+      '[data-presentation="editorial"] article[data-presentation="editorial"]',
+    );
+    if ((await editorialCards.count()) !== 8) {
+      throw new Error(`Expected 8 homepage editorial products at ${width}px.`);
+    }
+    if (
+      (await editorialCards.getByText("Featured", { exact: true }).count()) > 0
+    ) {
+      throw new Error(
+        `Homepage editorial cards show Featured badges at ${width}px.`,
+      );
+    }
+    if ((await editorialCards.locator("button").count()) > 0) {
+      throw new Error(
+        `Homepage editorial cards show finish controls at ${width}px.`,
+      );
+    }
+    if (
+      (await page
+        .getByText("Coordinated towel bars", { exact: true })
+        .count()) > 0
+    ) {
+      throw new Error(
+        "Removed coordinated towel-bar section is still present.",
+      );
+    }
+
+    const hasHorizontalOverflow = await page.evaluate(
+      () =>
+        document.documentElement.scrollWidth >
+        document.documentElement.clientWidth,
+    );
+    if (hasHorizontalOverflow) {
+      throw new Error(`Homepage has horizontal overflow at ${width}px.`);
+    }
+
+    await screenshot(
+      page,
+      `80-home-acceptance-${width}x${height}.png`,
+      mobileViewport ? "mobile" : "desktop",
+      true,
+      `Homepage acceptance at ${width} × ${height}`,
+    );
+    await page.close();
+    await context.close();
+  }
+}
 async function captureGlobalSearchReview(browser: Browser) {
   const widths = [1440, 1024, 768, 375] as const;
 
@@ -851,6 +940,7 @@ async function captureGlobalSearchReview(browser: Browser) {
     '#desktop-product-search input[type="search"]',
   );
   await overlayInput.fill("HG822C");
+  await behaviorPage.getByText("HG822C 이단수건선반").first().waitFor();
   await overlayInput.press("ArrowDown");
   if (!(await overlayInput.getAttribute("aria-activedescendant"))) {
     throw new Error(

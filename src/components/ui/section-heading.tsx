@@ -6,7 +6,9 @@ type SectionHeadingProps = {
   eyebrow?: string;
   eyebrowClassName?: string;
   title: string;
+  titleClassName?: string;
   description?: string;
+  descriptionClassName?: string;
   action?: {
     label: string;
     href: string;
@@ -18,7 +20,9 @@ export function SectionHeading({
   eyebrow,
   eyebrowClassName,
   title,
+  titleClassName,
   description,
+  descriptionClassName,
   action,
   align = "left",
 }: SectionHeadingProps) {
@@ -27,7 +31,7 @@ export function SectionHeading({
       className={`mb-9 flex gap-6 md:mb-12 ${
         align === "center"
           ? "mx-auto max-w-2xl flex-col items-center text-center"
-          : "items-end justify-between"
+          : "items-start justify-between md:items-end"
       }`}
     >
       <div>
@@ -40,11 +44,23 @@ export function SectionHeading({
             {eyebrow}
           </p>
         ) : null}
-        <h2 className="text-3xl leading-tight font-medium tracking-[-0.035em] text-balance md:text-4xl">
+        <h2
+          className={[
+            "leading-tight font-medium tracking-[-0.035em]",
+            titleClassName ?? "text-3xl text-balance md:text-4xl",
+          ].join(" ")}
+        >
           {title}
         </h2>
         {description ? (
-          <p className="mt-4 max-w-2xl text-[15px] leading-7 text-muted">
+          <p
+            className={[
+              "mt-4 max-w-2xl text-[15px] leading-7 text-muted",
+              descriptionClassName,
+            ]
+              .filter(Boolean)
+              .join(" ")}
+          >
             {description}
           </p>
         ) : null}

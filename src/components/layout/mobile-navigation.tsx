@@ -113,6 +113,7 @@ export function MobileNavigation() {
                 placeholder="제품명 또는 모델 번호 검색"
               />
             </div>
+
             <LanguageSelector mobile />
 
             <details className="mobile-accordion">
@@ -136,8 +137,6 @@ export function MobileNavigation() {
               </div>
             </details>
 
-            <LanguageSelector mobile />
-
             <details className="mobile-accordion">
               <summary>
                 컬렉션
@@ -158,8 +157,6 @@ export function MobileNavigation() {
                 ))}
               </div>
             </details>
-
-            <LanguageSelector mobile />
 
             <details className="mobile-accordion">
               <summary>
@@ -195,7 +192,7 @@ export function MobileNavigation() {
 
             {siteConfig.naverSmartStoreUrl ? (
               <a
-                className="mt-8 flex items-center justify-center gap-2 bg-naver px-5 py-4 text-sm font-semibold text-white"
+                className="mt-8 flex min-h-12 items-center justify-center gap-2 border border-line px-5 py-3 text-sm font-semibold transition-colors hover:border-brand hover:text-brand"
                 href={siteConfig.naverSmartStoreUrl}
                 rel="noopener noreferrer"
                 target="_blank"

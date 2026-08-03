@@ -34,7 +34,7 @@ export function SupportSection() {
     <div className="grid border-t border-line md:grid-cols-2 lg:grid-cols-4">
       {supportItems.map((item, index) => (
         <Link
-          className={`group flex min-h-64 flex-col justify-between py-7 transition-colors hover:bg-stone md:px-7 ${
+          className={`group flex min-h-56 flex-col justify-between py-7 transition-colors hover:text-brand md:px-7 ${
             index > 0 ? "border-t border-line md:border-l" : ""
           } ${index === 2 ? "md:border-l-0 lg:border-l" : ""} ${index < 2 ? "md:border-t-0" : "lg:border-t-0"}`}
           href={item.href}

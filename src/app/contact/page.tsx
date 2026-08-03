@@ -57,7 +57,7 @@ export default function ContactPage() {
               <dd className="mt-2 leading-6">{siteConfig.operatingHours}</dd>
             </div>
           </dl>
-          <Link className="text-link mt-8" href="/support">
+          <Link className="text-link mt-8 inline-flex" href="/support">
             고객지원 안내 보기
           </Link>
         </aside>

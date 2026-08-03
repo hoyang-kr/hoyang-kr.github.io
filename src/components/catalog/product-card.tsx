@@ -11,12 +11,19 @@ import { isBrioBpProductImage } from "@/lib/product-image";
 import { resolveProductVariant } from "@/lib/product-variant";
 import type { Finish, Product } from "@/types/product";
 
+export type ProductCardPresentation = "catalog" | "editorial";
+
 type ProductCardProps = {
   product: Product;
   preferredFinish?: Finish;
+  presentation?: ProductCardPresentation;
 };
 
-export function ProductCard({ product, preferredFinish }: ProductCardProps) {
+export function ProductCard({
+  product,
+  preferredFinish,
+  presentation = "catalog",
+}: ProductCardProps) {
   const preferredVariant = resolveProductVariant(
     product.variants,
     preferredFinish,
@@ -42,10 +49,49 @@ export function ProductCard({ product, preferredFinish }: ProductCardProps) {
 
   if (!selected) return null;
   const detailHref = `/products/${product.slug}?finish=${encodeURIComponent(selected.finish)}`;
+  const collectionNames = productCollectionNames(product);
+
+  if (presentation === "editorial") {
+    return (
+      <article className="group min-w-0" data-presentation="editorial">
+        <Link
+          aria-label={`${product.nameKo} 상세 보기`}
+          className="block"
+          href={detailHref}
+        >
+          <span className="relative block aspect-square overflow-hidden bg-surface">
+            <Image
+              alt={`${product.nameKo} ${selected.finish} 제품 이미지`}
+              className={`object-contain p-2 transition-transform duration-500 ease-out motion-reduce:transition-none md:p-3 ${
+                isBrioBpProductImage(selected.image)
+                  ? "scale-[2.05] group-hover:scale-[2.07]"
+                  : "group-hover:scale-[1.015]"
+              }`}
+              fill
+              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+              src={selected.image}
+            />
+            <CleanImageMask src={selected.image} />
+          </span>
+          <span className="mt-5 block">
+            {collectionNames.length > 0 ? (
+              <span className="block text-[10px] font-semibold tracking-[0.15em] text-muted uppercase">
+                {collectionNames.join(" / ")}
+              </span>
+            ) : null}
+            <span className="mt-2 block text-[15px] leading-6 font-medium tracking-[-0.025em] group-hover:text-brand md:text-base">
+              {product.nameKo}
+            </span>
+          </span>
+        </Link>
+      </article>
+    );
+  }
+
   const hasMultipleFinishes = product.variants.length > 1;
 
   return (
-    <article className="group min-w-0">
+    <article className="group min-w-0" data-presentation="catalog">
       <Link
         aria-label={`${product.nameKo} 상세 보기`}
         className="relative block aspect-square overflow-hidden border border-line bg-white"
@@ -71,7 +117,7 @@ export function ProductCard({ product, preferredFinish }: ProductCardProps) {
       </Link>
       <div className="pt-4">
         <p className="text-[10px] font-semibold tracking-[0.13em] text-muted uppercase">
-          {productCollectionNames(product).join(" / ")}
+          {collectionNames.join(" / ")}
         </p>
         <Link
           className="mt-1.5 flex items-start justify-between gap-3 text-[15px] font-medium tracking-[-0.02em] hover:text-muted md:text-base"

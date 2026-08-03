@@ -211,7 +211,7 @@ export function SearchResults({
           return (
             <Link
               aria-selected={activeIndex === index}
-              className="text-link"
+              className="text-link inline-flex"
               data-search-option
               href={"/products?q=" + encodeURIComponent(query.trim())}
               id={"search-option-" + instanceId + "-" + index}

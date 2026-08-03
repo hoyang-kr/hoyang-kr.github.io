@@ -1,71 +1,46 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { ArrowRightIcon, ExternalIcon } from "@/components/icons";
+import { ArrowRightIcon } from "@/components/icons";
 import { siteConfig } from "@/config/site";
 
 export function Hero() {
   return (
-    <section className="border-b border-line">
-      <div className="grid min-h-[42rem] lg:grid-cols-[0.82fr_1.18fr]">
+    <section className="border-b border-line bg-warm-white">
+      <div className="grid lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
         <div className="flex items-center">
-          <div className="w-full px-5 py-18 md:px-8 lg:ml-auto lg:max-w-[44rem] lg:px-14">
-            <p
-              className="homepage-hero-eyebrow mb-6 font-medium tracking-[0.075em]"
-              aria-label="EssentialBathroomStorage"
-            >
-              <span aria-hidden="true" className="inline-flex items-baseline">
-                <strong className="font-extrabold">E</strong>
-                <span>ssential</span>
-                <strong className="font-extrabold">B</strong>
-                <span>athroom</span>
-                <strong className="font-extrabold">S</strong>
-                <span>torage</span>
-              </span>
+          <div className="w-full px-5 py-18 sm:py-20 md:px-8 lg:ml-auto lg:max-w-[40rem] lg:px-8 lg:py-28 xl:px-14">
+            <p className="homepage-hero-eyebrow mb-6">
+              HOYANG BATHROOM COLLECTION
             </p>
-            <h1 className="max-w-lg text-2xl leading-[1.2] font-medium tracking-[-0.045em] text-balance sm:text-2xl lg:text-3xl">
-              {/* 욕실을 완성하는 정제된 디테일 */}
-              컬렉션과 마감으로 완성하는 욕실
+            <h1 className="text-4xl leading-[1.12] font-medium tracking-[-0.055em] sm:text-5xl lg:text-[2.75rem] lg:leading-[1.08] xl:text-[3.5rem]">
+              <span className="block whitespace-nowrap">공간에 스며드는</span>{" "}
+              <span className="block whitespace-nowrap">욕실의 디테일</span>
             </h1>
-            <p className="mt-7 max-w-xl text-[15px] leading-7 text-muted md:text-base">
-              공간에 자연스럽게 어우러지는 디자인과 실용적인 구조의 욕실을
+            <p className="mt-7 max-w-md text-[15px] leading-7 text-muted md:text-base md:leading-8">
+              기능과 형태, 마감의 균형을 고려한 HOYANG 욕실 액세서리를
               제안합니다.
             </p>
-            <div className="mt-9 flex flex-wrap gap-3">
+            <div className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-3">
               <Link className="button-primary" href="/products">
                 제품 살펴보기
                 <ArrowRightIcon className="size-4" />
               </Link>
-              {siteConfig.naverSmartStoreUrl ? (
-                <a
-                  className="button-naver"
-                  href={siteConfig.naverSmartStoreUrl}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  네이버 스토어
-                  <ExternalIcon className="size-4" />
-                </a>
-              ) : (
-                <Link
-                  className="button-secondary"
-                  href="/contact?topic=product"
-                >
-                  제품 문의
-                  <ArrowRightIcon className="size-4" />
-                </Link>
-              )}
+              <Link className="text-link inline-flex min-h-12" href="/about">
+                브랜드 이야기
+                <ArrowRightIcon className="size-4" />
+              </Link>
             </div>
           </div>
         </div>
 
-        <div className="relative min-h-[25rem] overflow-hidden bg-stone lg:min-h-[42rem]">
+        <div className="relative min-h-[24rem] overflow-hidden bg-stone lg:min-h-[44rem]">
           <Image
             alt={siteConfig.heroImageAlt}
-            className="object-cover"
+            className="object-cover object-[center_55%]"
             fill
             priority
-            sizes="(max-width: 1024px) 100vw, 60vw"
+            sizes="(max-width: 1023px) 100vw, 60vw"
             src={siteConfig.heroImagePath}
           />
         </div>

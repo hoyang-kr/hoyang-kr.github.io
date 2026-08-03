@@ -1,6 +1,9 @@
 import { categories } from "../src/data/categories";
 import { collections } from "../src/data/collections";
-import { homepageFeaturedProductConfigs } from "../src/data/homepage-products";
+import {
+  homepageFeaturedProductConfigs,
+  homepageSelectedProductConfigs,
+} from "../src/data/homepage-products";
 import { products } from "../src/data/products";
 import { productBelongsToCollection } from "../src/lib/catalog";
 import { sortProductsFeaturedFirst } from "../src/lib/product-sort";
@@ -248,6 +251,43 @@ for (const product of products) {
     `Unexpected Featured state for product: ${product.id}`,
   );
 }
+
+const expectedHomepageSelectedIds = [
+  "belair-towel-bar",
+  "batuta-paper-holder",
+  "concord-towel-bar",
+  "concord-paper-holder",
+  "hg110s",
+  "hg112s",
+  "hg822s",
+  "hg9992",
+];
+const actualHomepageSelectedIds = homepageSelectedProductConfigs.map(
+  (config) => config.id,
+);
+invariant(
+  JSON.stringify(actualHomepageSelectedIds) ===
+    JSON.stringify(expectedHomepageSelectedIds),
+  "Homepage selected product order does not match the approved configuration.",
+);
+invariant(
+  new Set(actualHomepageSelectedIds).size === actualHomepageSelectedIds.length,
+  "Homepage selected products must not contain duplicates.",
+);
+for (const id of expectedHomepageSelectedIds) {
+  const product = byId.get(id);
+  invariant(product, `Homepage selected product does not exist: ${id}`);
+  invariant(
+    product.featured,
+    `Homepage selected product must remain globally Featured: ${id}`,
+  );
+}
+invariant(
+  homepageSelectedProductConfigs.find(
+    (config) => config.id === "batuta-paper-holder",
+  )?.displayName === "벨레어 휴지걸이",
+  "Homepage selected shared holder must use its homepage-only display name.",
+);
 
 const excludedHomepageFeaturedIds = [
   "batuta-towel-bar",

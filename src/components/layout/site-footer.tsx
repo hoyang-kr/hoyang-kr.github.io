@@ -90,7 +90,7 @@ export function SiteFooter() {
             <div className="mt-6 flex gap-4 text-xs">
               {siteConfig.instagramUrl ? (
                 <a
-                  className="text-link"
+                  className="text-link inline-flex"
                   href={siteConfig.instagramUrl}
                   rel="noopener noreferrer"
                   target="_blank"
@@ -100,7 +100,7 @@ export function SiteFooter() {
               ) : null}
               {siteConfig.naverBlogUrl ? (
                 <a
-                  className="text-link"
+                  className="text-link inline-flex"
                   href={siteConfig.naverBlogUrl}
                   rel="noopener noreferrer"
                   target="_blank"

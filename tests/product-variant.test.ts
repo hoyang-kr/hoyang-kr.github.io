@@ -95,3 +95,25 @@ test("ProductCard renders all selected variant data from the preferred finish", 
   assert.match(markup, /finish=%EC%82%AC%ED%8B%B4/);
   assert.match(markup, /aria-label="마감: 사틴" aria-pressed="true"/);
 });
+
+test("ProductCard keeps catalog presentation by default and editorial presentation removes catalog-only controls", () => {
+  const product = productBySlug("hg513-cleaning-brush");
+  const catalogMarkup = renderToStaticMarkup(
+    createElement(ProductCard, { product }),
+  );
+  const editorialMarkup = renderToStaticMarkup(
+    createElement(ProductCard, { product, presentation: "editorial" }),
+  );
+
+  assert.match(catalogMarkup, /data-presentation="catalog"/);
+  assert.match(catalogMarkup, /Featured/);
+  assert.match(catalogMarkup, /모델 HG513/);
+  assert.match(catalogMarkup, /aria-pressed=/);
+
+  assert.match(editorialMarkup, /data-presentation="editorial"/);
+  assert.doesNotMatch(editorialMarkup, /Featured/);
+  assert.doesNotMatch(editorialMarkup, /모델 HG513/);
+  assert.doesNotMatch(editorialMarkup, /aria-pressed=/);
+  assert.doesNotMatch(editorialMarkup, /finish-chip/);
+  assert.match(editorialMarkup, /finish=%EC%82%AC%ED%8B%B4/);
+});

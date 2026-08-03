@@ -3,7 +3,10 @@ import test from "node:test";
 
 import { categories } from "@/data/categories";
 import { collections } from "@/data/collections";
-import { homepageFeaturedProductConfigs } from "@/data/homepage-products";
+import {
+  homepageFeaturedProductConfigs,
+  homepageSelectedProductConfigs,
+} from "@/data/homepage-products";
 import { finishes, getProductBySlug, products } from "@/data/products";
 import {
   productBelongsToCollection,
@@ -189,6 +192,32 @@ test("homepage featured configuration has the approved unique order", () => {
     "hg05",
   ]);
   assert.equal(new Set(configuredIds).size, 14);
+});
+
+test("homepage selected configuration has the approved unique order and Featured membership", () => {
+  const configuredIds = homepageSelectedProductConfigs.map(({ id }) => id);
+  assert.deepEqual(configuredIds, [
+    "belair-towel-bar",
+    "batuta-paper-holder",
+    "concord-towel-bar",
+    "concord-paper-holder",
+    "hg110s",
+    "hg112s",
+    "hg822s",
+    "hg9992",
+  ]);
+  assert.equal(new Set(configuredIds).size, 8);
+
+  for (const id of configuredIds) {
+    const product = products.find((item) => item.id === id);
+    assert.ok(product, `Missing homepage selected product: ${id}`);
+    assert.equal(product.featured, true, `${id} must remain globally Featured`);
+  }
+
+  const sharedHolder = homepageSelectedProductConfigs.find(
+    (config) => config.id === "batuta-paper-holder",
+  );
+  assert.equal(sharedHolder?.displayName, "벨레어 휴지걸이");
 });
 
 test("only homepage featured products have Featured badges", () => {

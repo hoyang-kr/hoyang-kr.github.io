@@ -97,27 +97,12 @@ button:disabled,
 }
 .homepage-eyebrow,
 .homepage-hero-eyebrow {
-  color: #b3262e;
-  font-size: 1rem;
-}
-
-.homepage-hero-eyebrow > span {
-  white-space: nowrap;
-}
-
-.homepage-hero-eyebrow strong {
-  font-size: 1.125rem;
-}
-
-@media (min-width: 1024px) {
-  .homepage-eyebrow,
-  .homepage-hero-eyebrow {
-    font-size: 1.125rem;
-  }
-
-  .homepage-hero-eyebrow strong {
-    font-size: 1.25rem;
-  }
+  color: var(--color-brand);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  line-height: 1.2;
+  text-transform: uppercase;
 }
 
 .button-primary,
@@ -169,7 +154,6 @@ button:disabled,
 }
 
 .text-link {
-  display: inline-flex;
   align-items: center;
   gap: 0.375rem;
   border-bottom: 1px solid var(--color-brand);
@@ -299,6 +283,11 @@ button:disabled,
   border-radius: 999px;
 }
 
+.finish-swatch-large {
+  width: 5rem;
+  height: 5rem;
+}
+
 .finish-사틴 {
   background: #b8bab6;
 }
@@ -350,5 +339,14 @@ button:disabled,
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }
