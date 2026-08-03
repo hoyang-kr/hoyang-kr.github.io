@@ -32,7 +32,7 @@ export function DealerMap({
   selectedDealerId?: string;
   onSelectDealer: (dealerId: string) => void;
 }) {
-  const clientId = process.env.PUBLIC_NAVER_MAP_CLIENT_ID ?? "";
+  const clientId = process.env.NEXT_PUBLIC_NAVER_MAP_CLIENT_ID ?? "";
   const containerRef = useRef<HTMLDivElement>(null);
   const mapsRef = useRef<NaverMapsNamespace>(undefined);
   const mapRef = useRef<NaverMap>(undefined);

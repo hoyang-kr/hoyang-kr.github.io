@@ -44,12 +44,6 @@ jobs:
       - name: Type-check
         run: npm run typecheck
 
-      - name: Generate build provenance
-        env:
-          BUILD_SHA: ${{ github.sha }}
-        run: |
-          printf '{"sha":"%s","builtAt":"%s","releaseMode":"preview"}\n' "$BUILD_SHA" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > public/build-info.json
-
       - name: Build static site
         env:
           GITHUB_PAGES: "true"
@@ -57,8 +51,21 @@ jobs:
           NEXT_PUBLIC_SITE_URL: ${{ steps.pages.outputs.base_url }}
           NEXT_PUBLIC_BUILD_SHA: ${{ github.sha }}
           NEXT_PUBLIC_INQUIRY_ENDPOINT: ${{ vars.NEXT_PUBLIC_INQUIRY_ENDPOINT }}
-          PUBLIC_NAVER_MAP_CLIENT_ID: ${{ vars.PUBLIC_NAVER_MAP_CLIENT_ID }}
-        run: npm run build
+          NEXT_PUBLIC_NAVER_MAP_CLIENT_ID: ${{ vars.NEXT_PUBLIC_NAVER_MAP_CLIENT_ID }}
+        run: |
+          if [ -z "$NEXT_PUBLIC_NAVER_MAP_CLIENT_ID" ]; then
+            echo "::error::NEXT_PUBLIC_NAVER_MAP_CLIENT_ID repository variable is required"
+            exit 1
+          fi
+          npm run build
+
+      - name: Add build provenance to static export
+        env:
+          BUILD_SHA: ${{ github.sha }}
+        run: |
+          test -d out
+          printf '{"sha":"%s","builtAt":"%s","releaseMode":"preview"}\n' "$BUILD_SHA" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > out/build-info.json
+          test -s out/build-info.json
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v5
