@@ -15,6 +15,9 @@ import { finishes, products } from "@/data/products";
 import { normalizeSearchText, searchCatalog } from "@/lib/catalog-search";
 
 const recommendedQueries = ["HG822C", "수건걸이", "매립형 휴지걸이", "크롬"];
+// A Korean IME can end one syllable and start the next in the same key sequence.
+// Keep React updates out of that handoff so the browser remains the text owner.
+const SEARCH_COMMIT_DELAY_MS = 200;
 
 export function GlobalSearch({
   autoFocus = false,
@@ -32,6 +35,7 @@ export function GlobalSearch({
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
   const isComposingRef = useRef(false);
+  const commitTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const instanceId = useId().replaceAll(":", "");
   const resultsId = "search-results-" + instanceId;
   const [query, setQuery] = useState("");
@@ -61,6 +65,28 @@ export function GlobalSearch({
     if (autoFocus) inputRef.current?.focus();
   }, [autoFocus]);
 
+  useEffect(
+    () => () => {
+      if (commitTimerRef.current !== null) {
+        clearTimeout(commitTimerRef.current);
+      }
+    },
+    [],
+  );
+
+  const cancelScheduledCommit = () => {
+    if (commitTimerRef.current === null) return;
+    clearTimeout(commitTimerRef.current);
+    commitTimerRef.current = null;
+  };
+  const scheduleQueryCommit = (value: string) => {
+    cancelScheduledCommit();
+    commitTimerRef.current = setTimeout(() => {
+      commitTimerRef.current = null;
+      if (!isComposingRef.current) commitQuery(value);
+    }, SEARCH_COMMIT_DELAY_MS);
+  };
+
   const navigate = (href: string) => {
     onNavigate?.();
     router.push(href);
@@ -70,6 +96,7 @@ export function GlobalSearch({
 
     if (!normalizeSearchText(submittedQuery)) return;
 
+    cancelScheduledCommit();
     if (submittedQuery !== query.trim()) {
       commitQuery(inputRef.current?.value ?? "");
     }
@@ -85,7 +112,8 @@ export function GlobalSearch({
         onSubmit={(event) => {
           event.preventDefault();
           if (isComposingRef.current) return;
-          if (activeIndex >= 0 && options[activeIndex])
+          const hasUncommittedInput = (inputRef.current?.value ?? "") !== query;
+          if (!hasUncommittedInput && activeIndex >= 0 && options[activeIndex])
             navigate(options[activeIndex].href);
           else submit();
         }}
@@ -112,14 +140,15 @@ export function GlobalSearch({
 
             if (isComposingRef.current || nativeEvent.isComposing) return;
 
-            commitQuery(event.currentTarget.value);
+            scheduleQueryCommit(event.currentTarget.value);
           }}
           onCompositionEnd={(event) => {
             isComposingRef.current = false;
-            commitQuery(event.currentTarget.value);
+            scheduleQueryCommit(event.currentTarget.value);
           }}
           onCompositionStart={() => {
             isComposingRef.current = true;
+            cancelScheduledCommit();
           }}
           onKeyDown={(event) => {
             const isComposing =
@@ -138,6 +167,7 @@ export function GlobalSearch({
               onClose();
               return;
             }
+            if (commitTimerRef.current !== null) return;
             if (!normalizedQuery || options.length === 0) return;
             if (event.key === "ArrowDown") {
               event.preventDefault();

@@ -31,6 +31,8 @@ type CatalogClientProps = {
 };
 
 type SortKey = "catalog" | "featured" | "name" | "model";
+// Avoid a route update between adjacent Korean IME composition sequences.
+const SEARCH_COMMIT_DELAY_MS = 200;
 
 export function CatalogClient({
   products,
@@ -45,6 +47,11 @@ export function CatalogClient({
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
   const filterTriggerRef = useRef<HTMLButtonElement>(null);
+  const searchInputRef = useRef<HTMLInputElement>(null);
+  const isSearchComposingRef = useRef(false);
+  const searchUpdateTimerRef = useRef<ReturnType<typeof setTimeout> | null>(
+    null,
+  );
   const urlValues = useMemo<CatalogFilterValues>(
     () => ({
       category: searchParams.get("category") ?? "",
@@ -58,6 +65,27 @@ export function CatalogClient({
   const sort = (searchParams.get("sort") as SortKey | null) ?? "featured";
   const query = searchParams.get("q") ?? "";
   const activeFilterCount = Object.values(values).filter(Boolean).length;
+
+  useEffect(() => {
+    const input = searchInputRef.current;
+    if (
+      input &&
+      !isSearchComposingRef.current &&
+      searchUpdateTimerRef.current === null &&
+      input.value !== query
+    ) {
+      input.value = query;
+    }
+  }, [query]);
+
+  useEffect(
+    () => () => {
+      if (searchUpdateTimerRef.current !== null) {
+        clearTimeout(searchUpdateTimerRef.current);
+      }
+    },
+    [],
+  );
 
   useEffect(() => {
     if (!mobileOpen) return;
@@ -104,6 +132,23 @@ export function CatalogClient({
         scroll: false,
       });
     });
+  };
+
+  const cancelScheduledSearchUpdate = () => {
+    if (searchUpdateTimerRef.current === null) return;
+    clearTimeout(searchUpdateTimerRef.current);
+    searchUpdateTimerRef.current = null;
+  };
+  const commitSearchQuery = (value: string) => {
+    cancelScheduledSearchUpdate();
+    updateParam("q", value);
+  };
+  const scheduleSearchQuery = (value: string) => {
+    cancelScheduledSearchUpdate();
+    searchUpdateTimerRef.current = setTimeout(() => {
+      searchUpdateTimerRef.current = null;
+      if (!isSearchComposingRef.current) updateParam("q", value);
+    }, SEARCH_COMMIT_DELAY_MS);
   };
 
   const clearFilters = () => {
@@ -179,7 +224,11 @@ export function CatalogClient({
       <form
         aria-label="제품 검색"
         className="mb-7 flex min-h-12 items-center border border-line bg-white focus-within:border-brand"
-        onSubmit={(event) => event.preventDefault()}
+        onSubmit={(event) => {
+          event.preventDefault();
+          if (isSearchComposingRef.current) return;
+          commitSearchQuery(searchInputRef.current?.value ?? "");
+        }}
         role="search"
       >
         <SearchIcon className="mx-4 size-5 shrink-0 text-muted" />
@@ -189,17 +238,42 @@ export function CatalogClient({
         <input
           autoComplete="off"
           className="h-12 min-w-0 flex-1 bg-transparent pr-3 text-base outline-none placeholder:text-muted md:text-sm"
+          defaultValue={query}
           id="catalog-product-search"
-          onChange={(event) => updateParam("q", event.target.value)}
+          onChange={(event) => {
+            const nativeEvent = event.nativeEvent as InputEvent;
+            if (isSearchComposingRef.current || nativeEvent.isComposing) return;
+            scheduleSearchQuery(event.currentTarget.value);
+          }}
+          onCompositionEnd={(event) => {
+            isSearchComposingRef.current = false;
+            scheduleSearchQuery(event.currentTarget.value);
+          }}
+          onCompositionStart={() => {
+            isSearchComposingRef.current = true;
+            cancelScheduledSearchUpdate();
+          }}
+          onKeyDown={(event) => {
+            if (
+              event.key === "Enter" &&
+              (isSearchComposingRef.current || event.nativeEvent.isComposing)
+            ) {
+              event.preventDefault();
+            }
+          }}
           placeholder="제품명 또는 모델 번호 검색"
+          ref={searchInputRef}
           type="search"
-          value={query}
         />
         {query ? (
           <button
             aria-label="검색어 지우기"
             className="flex size-11 items-center justify-center border-l border-line hover:text-brand"
-            onClick={() => updateParam("q", "")}
+            onClick={() => {
+              cancelScheduledSearchUpdate();
+              if (searchInputRef.current) searchInputRef.current.value = "";
+              updateParam("q", "");
+            }}
             type="button"
           >
             <CloseIcon className="size-4" />
