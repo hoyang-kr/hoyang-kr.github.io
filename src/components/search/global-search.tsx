@@ -31,10 +31,16 @@ export function GlobalSearch({
 }) {
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
+  const isComposingRef = useRef(false);
   const instanceId = useId().replaceAll(":", "");
   const resultsId = "search-results-" + instanceId;
+  const [inputValue, setInputValue] = useState("");
   const [query, setQuery] = useState("");
   const [activeIndex, setActiveIndex] = useState(-1);
+  const commitQuery = (value: string) => {
+    setQuery(value);
+    setActiveIndex(-1);
+  };
   const normalizedQuery = normalizeSearchText(query);
   const results = useMemo(
     () => searchCatalog(query, products, categories, collections, finishes),
@@ -61,8 +67,15 @@ export function GlobalSearch({
     router.push(href);
   };
   const submit = () => {
-    if (!normalizedQuery) return;
-    navigate("/products?q=" + encodeURIComponent(query.trim()));
+    const submittedQuery = inputValue.trim();
+
+    if (!normalizeSearchText(submittedQuery)) return;
+
+    if (submittedQuery !== query.trim()) {
+      commitQuery(inputValue);
+    }
+
+    navigate("/products?q=" + encodeURIComponent(submittedQuery));
   };
 
   return (
@@ -72,6 +85,7 @@ export function GlobalSearch({
         className="flex min-h-12 items-center border border-line bg-white focus-within:border-brand"
         onSubmit={(event) => {
           event.preventDefault();
+          if (isComposingRef.current) return;
           if (activeIndex >= 0 && options[activeIndex])
             navigate(options[activeIndex].href);
           else submit();
@@ -95,10 +109,39 @@ export function GlobalSearch({
           className="h-12 min-w-0 flex-1 bg-transparent pr-3 text-base outline-none placeholder:text-muted md:text-sm"
           id={"product-search-" + instanceId}
           onChange={(event) => {
-            setQuery(event.target.value);
+            const nextValue = event.currentTarget.value;
+            const nativeEvent = event.nativeEvent as InputEvent;
+
+            setInputValue(nextValue);
+
+            if (!isComposingRef.current && !nativeEvent.isComposing) {
+              commitQuery(nextValue);
+            }
+          }}
+          onCompositionEnd={(event) => {
+            isComposingRef.current = false;
+
+            const completedValue = event.currentTarget.value;
+
+            setInputValue(completedValue);
+            commitQuery(completedValue);
+          }}
+          onCompositionStart={() => {
+            isComposingRef.current = true;
             setActiveIndex(-1);
           }}
           onKeyDown={(event) => {
+            const isComposing =
+              event.nativeEvent.isComposing || isComposingRef.current;
+
+            if (isComposing) {
+              if (event.key === "Enter") {
+                event.preventDefault();
+              }
+
+              return;
+            }
+
             if (event.key === "Escape" && onClose) {
               event.preventDefault();
               onClose();
@@ -119,7 +162,7 @@ export function GlobalSearch({
           ref={inputRef}
           role="combobox"
           type="search"
-          value={query}
+          value={inputValue}
         />
         <button
           className="min-h-11 border-l border-line px-4 text-sm font-semibold hover:text-brand"
