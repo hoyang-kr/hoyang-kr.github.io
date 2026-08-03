@@ -82,7 +82,7 @@ export function ProductDetails({ product }: { product: Product }) {
               {collectionNames.join(" / ")} 컬렉션
             </p>
           ) : null}
-          <h1 className="text-[29px] leading-tight font-medium tracking-[-0.04em] md:text-[35px]">
+          <h1 className="text-[28px] leading-tight font-medium tracking-[-0.04em] md:text-[34px]">
             {product.nameKo}
           </h1>
           {selectedVariant.modelNumber ? (
