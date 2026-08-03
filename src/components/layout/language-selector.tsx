@@ -10,7 +10,7 @@ export function LanguageSelector({ mobile = false }: { mobile?: boolean }) {
       className={
         mobile
           ? "flex items-center gap-2 border-b border-line py-5 text-xs"
-          : "flex items-center gap-1 text-[11px]"
+          : "flex items-center gap-1.5 text-xs"
       }
       role="group"
     >

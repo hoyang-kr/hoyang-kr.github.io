@@ -34,7 +34,7 @@ export function HeaderLogoLink() {
     >
       <Image
         alt={siteConfig.logoAlt}
-        className="h-12 w-auto md:h-14"
+        className="h-12 w-auto md:h-[60px]"
         height={64}
         priority
         src={siteConfig.logoPath}

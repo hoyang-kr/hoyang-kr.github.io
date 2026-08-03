@@ -79,6 +79,10 @@ button:disabled,
   text-transform: uppercase;
 }
 
+.product-detail-eyebrow {
+  font-size: 0.75rem;
+}
+
 .eyebrow-section {
   color: var(--color-brand);
   font-size: 0.75rem;

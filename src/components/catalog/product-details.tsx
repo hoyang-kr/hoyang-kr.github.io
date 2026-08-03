@@ -78,9 +78,11 @@ export function ProductDetails({ product }: { product: Product }) {
 
         <div className="lg:sticky lg:top-32 lg:self-start">
           {collectionNames.length ? (
-            <p className="eyebrow mb-4">{collectionNames.join(" / ")} 컬렉션</p>
+            <p className="eyebrow product-detail-eyebrow mb-4">
+              {collectionNames.join(" / ")} 컬렉션
+            </p>
           ) : null}
-          <h1 className="text-3xl leading-tight font-medium tracking-[-0.04em] md:text-4xl">
+          <h1 className="text-[29px] leading-tight font-medium tracking-[-0.04em] md:text-[35px]">
             {product.nameKo}
           </h1>
           {selectedVariant.modelNumber ? (

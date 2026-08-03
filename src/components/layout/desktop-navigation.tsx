@@ -16,7 +16,7 @@ import { collections } from "@/data/collections";
 import { finishes } from "@/data/products";
 
 const dropdownTriggerClass =
-  "nav-trigger flex items-center gap-1.5 px-3 py-7 text-sm font-medium tracking-[-0.01em] transition-colors hover:text-muted";
+  "nav-trigger flex items-center gap-1.5 px-4 py-7 text-[15px] font-medium tracking-[-0.01em] transition-colors hover:text-muted";
 
 type MenuKey = "products" | "collections" | "finishes";
 
@@ -261,19 +261,19 @@ export function DesktopNavigation() {
       </div>
 
       <Link
-        className="px-3 py-7 text-sm font-medium hover:text-muted"
+        className="px-4 py-7 text-[15px] font-medium hover:text-muted"
         href="/about"
       >
         브랜드
       </Link>
       <Link
-        className="px-3 py-7 text-sm font-medium hover:text-muted"
+        className="px-4 py-7 text-[15px] font-medium hover:text-muted"
         href="/dealers"
       >
         대리점
       </Link>
       <Link
-        className="px-3 py-7 text-sm font-medium hover:text-muted"
+        className="px-4 py-7 text-[15px] font-medium hover:text-muted"
         href="/support"
       >
         고객지원
@@ -282,7 +282,7 @@ export function DesktopNavigation() {
         aria-controls="desktop-product-search"
         aria-expanded={searchOpen}
         aria-label="제품 검색"
-        className="flex min-h-11 min-w-11 items-center justify-center gap-2 self-center px-2 text-sm font-medium hover:text-brand xl:px-3"
+        className="flex min-h-11 min-w-11 items-center justify-center gap-2 self-center px-3 text-[15px] font-medium hover:text-brand xl:px-4"
         onClick={() => {
           setOpenMenu(null);
           setSearchOpen((current) => !current);
@@ -326,7 +326,7 @@ export function DesktopNavigation() {
       ) : null}
       {siteConfig.naverSmartStoreUrl ? (
         <a
-          className="ml-3 flex items-center gap-1.5 self-center border border-naver bg-naver px-4 py-2.5 text-xs font-semibold text-white transition-colors hover:brightness-90"
+          className="ml-3 flex items-center gap-1.5 self-center border border-naver bg-naver px-4 py-2.5 text-[13px] font-semibold text-white transition-colors hover:brightness-90"
           href={siteConfig.naverSmartStoreUrl}
           rel="noopener noreferrer"
           target="_blank"
@@ -336,7 +336,7 @@ export function DesktopNavigation() {
         </a>
       ) : (
         <Link
-          className="ml-3 flex items-center gap-1.5 self-center border border-line px-4 py-2.5 text-xs font-semibold"
+          className="ml-3 flex items-center gap-1.5 self-center border border-line px-4 py-2.5 text-[13px] font-semibold"
           href="/contact?topic=product"
         >
           제품 문의

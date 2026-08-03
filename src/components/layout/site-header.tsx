@@ -9,7 +9,7 @@ export function SiteHeader() {
   return (
     <>
       <div className="hidden border-b border-line bg-stone md:block">
-        <div className="page-shell flex h-9 items-center justify-end gap-6 text-[11px] text-muted">
+        <div className="page-shell flex h-10 items-center justify-end gap-7 text-xs text-muted">
           <Link className="hover:text-ink" href="/contact?topic=product">
             제품 문의
           </Link>
