@@ -1,0 +1,350 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-warm-white: #ffffff;
+  --color-stone: #f3f3f1;
+  --color-surface: #fafaf9;
+  --color-ink: #1f1f1d;
+  --color-muted: #686864;
+  --color-line: #d8d8d3;
+  --color-steel: #8b8f8d;
+  --color-brand: #a63b32;
+  --color-brand-soft: #f3e7e5;
+  --color-naver: #00873e;
+  --font-sans:
+    Pretendard, "Pretendard Variable", "Noto Sans KR", "Apple SD Gothic Neo",
+    Inter, system-ui, sans-serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-warm-white);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-brand-soft);
+  color: var(--color-ink);
+}
+
+a,
+button,
+summary,
+select,
+input {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 3px;
+}
+
+button,
+summary,
+select {
+  cursor: pointer;
+}
+
+button:disabled,
+[aria-disabled="true"] {
+  cursor: not-allowed;
+}
+
+.page-shell {
+  width: min(100% - 2.5rem, 88rem);
+  margin-inline: auto;
+}
+
+.bg-ink .eyebrow {
+  color: var(--color-brand-soft);
+}
+
+.eyebrow {
+  color: var(--color-brand);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.eyebrow-section {
+  color: var(--color-brand);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.bg-ink .eyebrow-section {
+  color: var(--color-brand-soft);
+}
+.homepage-eyebrow,
+.homepage-hero-eyebrow {
+  color: #b3262e;
+  font-size: 1rem;
+}
+
+.homepage-hero-eyebrow > span {
+  white-space: nowrap;
+}
+
+.homepage-hero-eyebrow strong {
+  font-size: 1.125rem;
+}
+
+@media (min-width: 1024px) {
+  .homepage-eyebrow,
+  .homepage-hero-eyebrow {
+    font-size: 1.125rem;
+  }
+
+  .homepage-hero-eyebrow strong {
+    font-size: 1.25rem;
+  }
+}
+
+.button-primary,
+.button-secondary,
+.button-naver {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.8125rem;
+  font-weight: 650;
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+.button-primary {
+  border: 1px solid var(--color-ink);
+  background: var(--color-ink);
+  color: white;
+}
+
+.button-primary:hover {
+  background: var(--color-brand);
+  border-color: var(--color-brand);
+}
+
+.button-secondary {
+  border: 1px solid var(--color-ink);
+  color: var(--color-ink);
+}
+
+.button-secondary:hover {
+  background: var(--color-ink);
+  color: white;
+}
+
+.button-naver {
+  background: var(--color-naver);
+  color: white;
+}
+
+.button-naver:hover {
+  background: var(--color-naver);
+  filter: brightness(0.9);
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  border-bottom: 1px solid var(--color-brand);
+  padding-bottom: 0.2rem;
+  font-size: 0.8125rem;
+  font-weight: 650;
+}
+
+.text-link:hover {
+  color: var(--color-brand);
+}
+
+.mega-panel {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease,
+    visibility 160ms;
+}
+
+.mega-panel[data-open="true"] {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav-trigger[data-open="true"] {
+  box-shadow: inset 0 -2px var(--color-brand);
+  color: var(--color-brand);
+}
+
+.mega-link {
+  border-top: 1px solid var(--color-line);
+  padding-block: 0.875rem;
+  font-size: 0.875rem;
+  transition:
+    color 160ms ease,
+    padding-left 160ms ease;
+}
+
+.mega-link:hover,
+.mega-link:focus-visible {
+  color: var(--color-brand);
+  padding-left: 0.25rem;
+}
+
+.mobile-accordion,
+.mobile-main-link {
+  display: block;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.mobile-accordion summary,
+.mobile-main-link {
+  display: flex;
+  min-height: 4rem;
+  list-style: none;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.mobile-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.mobile-accordion[open] summary svg {
+  transform: rotate(180deg);
+}
+
+.mobile-accordion div a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0 0.65rem 1rem;
+  color: var(--color-muted);
+  font-size: 0.875rem;
+}
+
+.finish-chip {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: 0.55rem;
+  border: 1px solid var(--color-line);
+  background: var(--color-surface);
+  padding: 0.55rem 0.7rem;
+  color: var(--color-muted);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    color 160ms ease;
+}
+
+.finish-chip:hover {
+  border-color: var(--color-brand);
+  color: var(--color-ink);
+}
+
+.finish-chip[data-selected="true"] {
+  border-color: var(--color-brand);
+  box-shadow: 0 0 0 2px var(--color-brand-soft);
+  color: var(--color-ink);
+}
+
+.finish-chip-static {
+  min-height: 2rem;
+  cursor: default;
+  background: transparent;
+}
+
+.finish-chip-static:hover {
+  border-color: var(--color-line);
+}
+
+.finish-swatch {
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: none;
+  border: 1px solid var(--color-steel);
+  border-radius: 999px;
+}
+
+.finish-사틴 {
+  background: #b8bab6;
+}
+
+.finish-크롬 {
+  background: #d9dcdd;
+  box-shadow: inset 0.38rem 0 #f7f7f6;
+}
+
+.finish-블랙 {
+  background: #232421;
+  border-color: #232421;
+}
+
+.finish-무광 {
+  background: #7e817d;
+}
+
+.finish-미확인 {
+  background: transparent;
+  border-style: dashed;
+}
+
+.legal-copy h2 {
+  margin-top: 2.5rem;
+  font-size: 1.125rem;
+  font-weight: 650;
+}
+
+.legal-copy p,
+.legal-copy li {
+  margin-top: 0.75rem;
+  color: var(--color-muted);
+  font-size: 0.875rem;
+  line-height: 1.85;
+}
+
+.legal-copy ul {
+  padding-left: 1.2rem;
+  list-style: disc;
+}
+
+@media (min-width: 768px) {
+  .page-shell {
+    width: min(100% - 4rem, 88rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

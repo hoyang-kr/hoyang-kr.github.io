@@ -1,0 +1,52 @@
+{
+  "name": "brand-bathroom-catalog",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "tsx scripts/guard-production-build.ts && next build",
+    "start": "next start",
+    "import:images": "tsx scripts/import-product-images.ts",
+    "import:launch-data": "tsx scripts/import-launch-data.ts",
+    "validate:preview": "tsx scripts/validate-preview.ts",
+    "validate:launch": "tsx scripts/validate-launch.ts",
+    "audit:sitemap": "tsx scripts/audit-sitemap.ts",
+    "audit:quality": "tsx scripts/audit-launch-quality.ts",
+    "smoke:routes": "tsx scripts/smoke-routes.ts",
+    "typecheck": "tsc --noEmit",
+    "verify:production": "npm run validate:launch && npm run import:images && npm run format:check && npm run lint && npm run typecheck && npm run build && npm run audit:sitemap && npm run smoke:routes",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "review:visual": "tsx scripts/capture-visual-review.ts",
+    "validate:catalog": "tsx scripts/validate-catalog-integrity.ts",
+    "test": "tsx --test tests/product-variant.test.ts tests/catalog-search.test.ts tests/dealer-search.test.ts tests/dealer-map.test.ts",
+    "verify:deployed": "tsx scripts/verify-deployed-site.ts"
+  },
+  "dependencies": {
+    "next": "16.2.12",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "16.2.12",
+    "playwright": "^1.62.0",
+    "postcss": "^8.0.0",
+    "prettier": "^3.0.0",
+    "prettier-plugin-tailwindcss": "^0.7.0",
+    "sharp": "^0.34.5",
+    "tailwindcss": "4.3.3",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "yaml": "^2.9.0"
+  }
+}

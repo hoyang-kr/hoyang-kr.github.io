@@ -1,0 +1,137 @@
+# 운영 데이터 입력 템플릿입니다.
+# 이 파일은 애플리케이션에 직접 로드되지 않습니다.
+# business.yaml로 복사한 뒤 사업자가 검증한 실제 값만 입력하세요.
+# 빈 문자열("")은 미확정 값이며 preview에서는 허용되지만 production 검증은 실패합니다.
+
+brand:
+  # 한글 브랜드명 | production 필수 | 예시 형식: 공식 소비자 브랜드명
+  brandNameKo: ""
+  # 영문 브랜드명 | production 필수 | 예시 형식: 공식 대소문자와 띄어쓰기
+  brandNameEn: ""
+  # 법인/개인사업자 공식 한글 상호 | production 필수
+  legalCompanyNameKo: ""
+  # 공식 영문 상호 | 선택
+  legalCompanyNameEn: ""
+  # 공개 디렉터리 기준 로고 경로 | production 필수 | 예: /images/brand/logo.svg
+  logoPath: ""
+  # 로고 대체 텍스트 | production 필수
+  logoAlt: ""
+  # 공개 디렉터리 기준 파비콘 경로 | production 필수
+  faviconPath: ""
+  # 홈페이지/브랜드 페이지 대표 이미지 경로 | production 필수
+  heroImagePath: ""
+  # 대표 이미지의 사실적인 대체 텍스트 | production 필수
+  heroImageAlt: ""
+  # 브랜드 기본 소개 | production 필수
+  primaryBrandDescription: ""
+  # 푸터와 짧은 메타데이터용 소개 | production 필수
+  shortBrandDescription: ""
+  # 설립 연도 | 선택 | 모르면 null 유지
+  establishedYear: null
+  # 제조사와 사이트 운영 사업자의 관계 | production 필수
+  manufacturerRelationship: ""
+  # HOYANG과 사이트 브랜드/사업자의 관계 | production 필수
+  hoyangRelationshipStatement: ""
+  # 제품 이미지 공개 사용 권리 확인 여부 | production에서는 true 필수
+  imageRightsConfirmed: false
+  # 브랜드명·제품명·상표 사용 권리 확인 여부 | production에서는 true 필수
+  trademarkRightsConfirmed: false
+  # 제품 이미지 권리자 이름 | production 필수
+  productImageOwner: ""
+  # unverified | confirmed | restricted | denied
+  productImageLicenseStatus: unverified
+  # 이미지에 삽입된 브랜드명
+  embeddedBrandName: HOYANG
+  # 삽입 브랜드와 사이트 브랜드/사업자의 관계
+  embeddedBrandRelationship: ""
+  # 웹사이트 공개 게시 허용 여부 | production에서는 true 필수
+  permittedPublicUse: false
+  # 크롭·리터칭·로고 제거 등 수정 허용 여부
+  permittedModification: false
+  # 제조사/권리자 표기 필요 여부
+  attributionRequired: false
+  # 계약서·이메일·승인 문서의 내부 참조 번호 또는 경로 | production 필수
+  confirmationDocumentReference: ""
+
+company:
+  # 대표자명 | production 필수
+  representativeName: ""
+  # 사업자등록번호 | production 필수 | 형식: NNN-NN-NNNNN
+  businessRegistrationNumber: ""
+  # 통신판매업 신고가 법적으로 필요한 운영인지 사업자/법률 검토 후 설정
+  mailOrderRegistrationRequired: true
+  # 통신판매업 신고번호 | 위 값이 true이면 production 필수
+  mailOrderRegistrationNumber: ""
+  # 사업장 도로명 주소와 필요한 상세 주소 | production 필수
+  businessAddress: ""
+  # 실제 연결되는 고객센터 전화번호 | production 필수 | 국제번호 또는 국내번호
+  customerServicePhone: ""
+  # 팩스 번호 | production 필수
+  faxNumber: ""
+  # 실제 수신 가능한 고객센터 이메일 | production 필수
+  customerServiceEmail: ""
+  # 운영 시간과 휴무 안내 | production 필수
+  operatingHours: ""
+  # 개인정보 보호책임자 이름 또는 직책 | production 필수
+  privacyOfficer: ""
+  # 도매/프로젝트 문의 이메일 | 선택
+  wholesaleInquiryEmail: ""
+  # 도매/프로젝트 문의 전화번호 | 선택
+  wholesaleInquiryPhone: ""
+
+online:
+  # 운영 도메인과 canonical origin은 seo.yaml 한 곳에서 입력합니다.
+  # 네이버 스마트스토어 또는 브랜드스토어 홈 HTTPS URL | production 필수
+  naverStoreHomepageUrl: ""
+  # 공식 Instagram HTTPS URL | 선택
+  instagramUrl: ""
+  # 공식 Naver Blog HTTPS URL | 선택
+  naverBlogUrl: ""
+  # 공식 Kakao Channel HTTPS URL | 선택
+  kakaoChannelUrl: ""
+  # 승인한 네이버 판매 호스트 목록 | 링크 검증에 사용
+  approvedNaverStoreHosts:
+    - smartstore.naver.com
+    - brand.naver.com
+
+customerPolicy:
+  # 아래 정책은 실제 사업 정책과 법률 검토를 거친 문장만 입력합니다.
+  # 보증 범위·기간 요약 | production 필수
+  warrantySummary: ""
+  # A/S 접수와 처리 절차 요약 | production 필수
+  asPolicySummary: ""
+  # 교환·반품 책임 경계와 안내 요약 | production 필수
+  returnExchangeSummary: ""
+  # 설치 책임과 전문 시공 필요 여부 | production 필수
+  installationResponsibilityStatement: ""
+  # 제품/마감 관리 방법 요약 | production 필수
+  productCareSummary: ""
+  # 배송 범위와 확인 채널 요약 | production 필수
+  deliveryInformationSummary: ""
+  # 고객이 문의할 때 준비할 정보와 연락 절차 | production 필수
+  customerSupportInstructions: ""
+
+legal:
+  # draft | final
+  privacyPolicyStatus: draft
+  # draft | final
+  termsStatus: draft
+  # 법률/사업 검토 완료 여부 | production에서는 true 필수
+  legalReviewCompleted: false
+  # YYYY-MM-DD | 검토 완료일
+  legalReviewDate: ""
+  # 검토자 이름 또는 조직/직책
+  legalReviewer: ""
+  # YYYY-MM-DD | 개인정보처리방침 시행일
+  privacyPolicyEffectiveDate: ""
+  # YYYY-MM-DD | 이용약관 시행일
+  termsEffectiveDate: ""
+  # 법률 검토가 완료된 최종 섹션만 입력합니다.
+  # 예시 형식: [{ heading: "1. 제목", body: "검토된 본문" }]
+  privacyPolicySections: []
+  termsSections: []
+
+deployment:
+  # development | preview | production
+  # NODE_ENV와 별도로 관리하며 production은 모든 출시 검증을 통과해야 합니다.
+  releaseMode: preview

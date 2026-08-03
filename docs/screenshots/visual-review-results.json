@@ -1,0 +1,489 @@
+{
+  "baseUrl": "http://localhost:3100",
+  "generatedAt": "2026-07-30T07:40:07.641Z",
+  "viewportSizes": {
+    "desktop": {
+      "width": 1440,
+      "height": 1000
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844
+    }
+  },
+  "captures": [
+    {
+      "filename": "01-home-desktop.png",
+      "path": "docs/screenshots/01-home-desktop.png",
+      "viewport": "desktop",
+      "fullPage": true
+    },
+    {
+      "filename": "02-products-desktop.png",
+      "path": "docs/screenshots/02-products-desktop.png",
+      "viewport": "desktop",
+      "fullPage": true
+    },
+    {
+      "filename": "03-collection-concord-desktop.png",
+      "path": "docs/screenshots/03-collection-concord-desktop.png",
+      "viewport": "desktop",
+      "fullPage": true
+    },
+    {
+      "filename": "04-hg-products-desktop.png",
+      "path": "docs/screenshots/04-hg-products-desktop.png",
+      "viewport": "desktop",
+      "fullPage": true
+    },
+    {
+      "filename": "05-towel-bar-desktop.png",
+      "path": "docs/screenshots/05-towel-bar-desktop.png",
+      "viewport": "desktop",
+      "fullPage": true
+    },
+    {
+      "filename": "06-paper-holder-desktop.png",
+      "path": "docs/screenshots/06-paper-holder-desktop.png",
+      "viewport": "desktop",
+      "fullPage": true
+    },
+    {
+      "filename": "07-recessed-holder-desktop.png",
+      "path": "docs/screenshots/07-recessed-holder-desktop.png",
+      "viewport": "desktop",
+      "fullPage": true
+    },
+    {
+      "filename": "08-about-desktop.png",
+      "path": "docs/screenshots/08-about-desktop.png",
+      "viewport": "desktop",
+      "fullPage": true
+    },
+    {
+      "filename": "09-support-desktop.png",
+      "path": "docs/screenshots/09-support-desktop.png",
+      "viewport": "desktop",
+      "fullPage": true
+    },
+    {
+      "filename": "10-contact-desktop.png",
+      "path": "docs/screenshots/10-contact-desktop.png",
+      "viewport": "desktop",
+      "fullPage": true
+    },
+    {
+      "filename": "11-mega-menu-desktop.png",
+      "path": "docs/screenshots/11-mega-menu-desktop.png",
+      "viewport": "desktop",
+      "fullPage": false,
+      "state": "제품 메가 메뉴 열림"
+    },
+    {
+      "filename": "12-empty-filter-desktop.png",
+      "path": "docs/screenshots/12-empty-filter-desktop.png",
+      "viewport": "desktop",
+      "fullPage": false,
+      "state": "공유 가능한 빈 필터 결과"
+    },
+    {
+      "filename": "13-404-desktop.png",
+      "path": "docs/screenshots/13-404-desktop.png",
+      "viewport": "desktop",
+      "fullPage": false,
+      "state": "custom 404"
+    },
+    {
+      "filename": "14-home-mobile.png",
+      "path": "docs/screenshots/14-home-mobile.png",
+      "viewport": "mobile",
+      "fullPage": true
+    },
+    {
+      "filename": "15-products-mobile.png",
+      "path": "docs/screenshots/15-products-mobile.png",
+      "viewport": "mobile",
+      "fullPage": true
+    },
+    {
+      "filename": "16-mobile-navigation.png",
+      "path": "docs/screenshots/16-mobile-navigation.png",
+      "viewport": "mobile",
+      "fullPage": false,
+      "state": "모바일 메뉴 열림"
+    },
+    {
+      "filename": "17-filter-drawer-mobile.png",
+      "path": "docs/screenshots/17-filter-drawer-mobile.png",
+      "viewport": "mobile",
+      "fullPage": false,
+      "state": "모바일 필터 드로어 열림"
+    },
+    {
+      "filename": "18-finish-selector-mobile.png",
+      "path": "docs/screenshots/18-finish-selector-mobile.png",
+      "viewport": "mobile",
+      "fullPage": false,
+      "state": "크롬 마감 선택"
+    },
+    {
+      "filename": "60-home-category-representatives.png",
+      "path": "docs/screenshots/60-home-category-representatives.png",
+      "viewport": "desktop",
+      "fullPage": false,
+      "state": "HG112S recessed holder and HG999-2 shaving mirror category covers"
+    },
+    {
+      "filename": "61-home-coordinated-satin-towel-bars.png",
+      "path": "docs/screenshots/61-home-coordinated-satin-towel-bars.png",
+      "viewport": "desktop",
+      "fullPage": false,
+      "state": "Belair, Brio, and Concord satin towel bars"
+    },
+    {
+      "filename": "62-collections-desktop.png",
+      "path": "docs/screenshots/62-collections-desktop.png",
+      "viewport": "desktop",
+      "fullPage": true,
+      "state": "Collections desktop"
+    },
+    {
+      "filename": "64-collection-belair-towel-bar.png",
+      "path": "docs/screenshots/64-collection-belair-towel-bar.png",
+      "viewport": "desktop",
+      "fullPage": false,
+      "state": "Belair satin towel-bar collection cover"
+    },
+    {
+      "filename": "65-collection-saco-towel-bar.png",
+      "path": "docs/screenshots/65-collection-saco-towel-bar.png",
+      "viewport": "desktop",
+      "fullPage": false,
+      "state": "Saco towel-bar collection cover"
+    },
+    {
+      "filename": "66-collection-image-canvas-closeup.png",
+      "path": "docs/screenshots/66-collection-image-canvas-closeup.png",
+      "viewport": "desktop",
+      "fullPage": false,
+      "state": "Unified white collection image canvas"
+    },
+    {
+      "filename": "67-belair-paper-holder-satin-only-card.png",
+      "path": "docs/screenshots/67-belair-paper-holder-satin-only-card.png",
+      "viewport": "desktop",
+      "fullPage": false,
+      "state": "Belair paper holder satin-only product card"
+    },
+    {
+      "filename": "68-belair-paper-holder-stale-chrome-fallback.png",
+      "path": "docs/screenshots/68-belair-paper-holder-stale-chrome-fallback.png",
+      "viewport": "desktop",
+      "fullPage": true,
+      "state": "Stale chrome URL safely falls back to satin"
+    },
+    {
+      "filename": "63-collections-mobile.png",
+      "path": "docs/screenshots/63-collections-mobile.png",
+      "viewport": "mobile",
+      "fullPage": true,
+      "state": "Collections mobile"
+    },
+    {
+      "filename": "50-products-no-finish.png",
+      "path": "docs/screenshots/50-products-no-finish.png",
+      "viewport": "desktop",
+      "fullPage": true,
+      "state": "마감 필터 없음"
+    },
+    {
+      "filename": "51-products-chrome.png",
+      "path": "docs/screenshots/51-products-chrome.png",
+      "viewport": "desktop",
+      "fullPage": true,
+      "state": "크롬 마감 필터"
+    },
+    {
+      "filename": "52-saco-paper-holder-chrome.png",
+      "path": "docs/screenshots/52-saco-paper-holder-chrome.png",
+      "viewport": "desktop",
+      "fullPage": false,
+      "state": "크롬 필터의 사코 휴지걸이"
+    },
+    {
+      "filename": "53-products-black.png",
+      "path": "docs/screenshots/53-products-black.png",
+      "viewport": "desktop",
+      "fullPage": true,
+      "state": "블랙 마감 필터"
+    },
+    {
+      "filename": "54-saco-paper-holder-black.png",
+      "path": "docs/screenshots/54-saco-paper-holder-black.png",
+      "viewport": "desktop",
+      "fullPage": false,
+      "state": "블랙 필터의 사코 휴지걸이"
+    },
+    {
+      "filename": "56-products-filter-cleared.png",
+      "path": "docs/screenshots/56-products-filter-cleared.png",
+      "viewport": "desktop",
+      "fullPage": true,
+      "state": "크롬 선택 후 필터 초기화"
+    },
+    {
+      "filename": "55-products-chrome-mobile.png",
+      "path": "docs/screenshots/55-products-chrome-mobile.png",
+      "viewport": "mobile",
+      "fullPage": true,
+      "state": "모바일 크롬 마감 필터"
+    },
+    {
+      "filename": "19-home-en-desktop.png",
+      "path": "docs/screenshots/19-home-en-desktop.png",
+      "viewport": "desktop",
+      "fullPage": true,
+      "state": "English homepage"
+    },
+    {
+      "filename": "20-home-en-mobile.png",
+      "path": "docs/screenshots/20-home-en-mobile.png",
+      "viewport": "mobile",
+      "fullPage": true,
+      "state": "English homepage"
+    },
+    {
+      "filename": "21-coordinated-towel-bars-desktop.png",
+      "path": "docs/screenshots/21-coordinated-towel-bars-desktop.png",
+      "viewport": "desktop",
+      "fullPage": false,
+      "state": "하나의 공간으로 이어지는 구성"
+    },
+    {
+      "filename": "22-category-navigation-desktop.png",
+      "path": "docs/screenshots/22-category-navigation-desktop.png",
+      "viewport": "desktop",
+      "fullPage": false,
+      "state": "Browse by category"
+    },
+    {
+      "filename": "23-hero-branding-desktop.png",
+      "path": "docs/screenshots/23-hero-branding-desktop.png",
+      "viewport": "desktop",
+      "fullPage": false,
+      "state": "larger logo, EssentialBathroomStorage, reduced Korean heading"
+    },
+    {
+      "filename": "24-hg822c-card-desktop.png",
+      "path": "docs/screenshots/24-hg822c-card-desktop.png",
+      "viewport": "desktop",
+      "fullPage": false,
+      "state": "HG822C 이단수건선반"
+    },
+    {
+      "filename": "25-hg822s-card-desktop.png",
+      "path": "docs/screenshots/25-hg822s-card-desktop.png",
+      "viewport": "desktop",
+      "fullPage": false,
+      "state": "HG822S 이단수건선반"
+    },
+    {
+      "filename": "26-belair-paper-holder-satin-only.png",
+      "path": "docs/screenshots/26-belair-paper-holder-satin-only.png",
+      "viewport": "desktop",
+      "fullPage": false,
+      "state": "벨레어 휴지걸이"
+    },
+    {
+      "filename": "27-brio-paper-holder-chrome.png",
+      "path": "docs/screenshots/27-brio-paper-holder-chrome.png",
+      "viewport": "desktop",
+      "fullPage": false,
+      "state": "브리오 휴지걸이"
+    },
+    {
+      "filename": "28-hero-375.png",
+      "path": "docs/screenshots/28-hero-375.png",
+      "viewport": "mobile",
+      "fullPage": false,
+      "state": "Homepage hero and EssentialBathroomStorage at 375px"
+    },
+    {
+      "filename": "28-hero-768.png",
+      "path": "docs/screenshots/28-hero-768.png",
+      "viewport": "desktop",
+      "fullPage": false,
+      "state": "Homepage hero and EssentialBathroomStorage at 768px"
+    },
+    {
+      "filename": "28-hero-1024.png",
+      "path": "docs/screenshots/28-hero-1024.png",
+      "viewport": "desktop",
+      "fullPage": false,
+      "state": "Homepage hero and EssentialBathroomStorage at 1024px"
+    },
+    {
+      "filename": "28-hero-1440.png",
+      "path": "docs/screenshots/28-hero-1440.png",
+      "viewport": "desktop",
+      "fullPage": false,
+      "state": "Homepage hero and EssentialBathroomStorage at 1440px"
+    },
+    {
+      "filename": "40-essential-storage-closeup.png",
+      "path": "docs/screenshots/40-essential-storage-closeup.png",
+      "viewport": "desktop",
+      "fullPage": false,
+      "state": "EssentialBathroomStorage close-up"
+    },
+    {
+      "filename": "32-category-section-normal.png",
+      "path": "docs/screenshots/32-category-section-normal.png",
+      "viewport": "desktop",
+      "fullPage": false,
+      "state": "Category cards, normal state"
+    },
+    {
+      "filename": "33-category-card-hover.png",
+      "path": "docs/screenshots/33-category-card-hover.png",
+      "viewport": "desktop",
+      "fullPage": false,
+      "state": "Category card, hover state"
+    },
+    {
+      "filename": "34-category-image-edge.png",
+      "path": "docs/screenshots/34-category-image-edge.png",
+      "viewport": "desktop",
+      "fullPage": false,
+      "state": "Close category image edge"
+    },
+    {
+      "filename": "35-towel-bar-order.png",
+      "path": "docs/screenshots/35-towel-bar-order.png",
+      "viewport": "desktop",
+      "fullPage": true,
+      "state": "Requested towel-bar and towel-shelf order"
+    },
+    {
+      "filename": "41-battuta-towel-bar-card.png",
+      "path": "docs/screenshots/41-battuta-towel-bar-card.png",
+      "viewport": "desktop",
+      "fullPage": false,
+      "state": "바투타 수건걸이 사틴 product card"
+    },
+    {
+      "filename": "42-battuta-towel-bar-detail.png",
+      "path": "docs/screenshots/42-battuta-towel-bar-detail.png",
+      "viewport": "desktop",
+      "fullPage": true,
+      "state": "바투타 수건걸이 사틴 product detail"
+    },
+    {
+      "filename": "43-hg100ms-clean-image.png",
+      "path": "docs/screenshots/43-hg100ms-clean-image.png",
+      "viewport": "desktop",
+      "fullPage": false,
+      "state": "HG100MS 코너선반 without embedded model label"
+    },
+    {
+      "filename": "44-hg110-1-clean-image.png",
+      "path": "docs/screenshots/44-hg110-1-clean-image.png",
+      "viewport": "desktop",
+      "fullPage": false,
+      "state": "HG110-1 매립휴지걸이 without embedded model label"
+    },
+    {
+      "filename": "36-battuta-collections.png",
+      "path": "docs/screenshots/36-battuta-collections.png",
+      "viewport": "desktop",
+      "fullPage": true,
+      "state": "battuta collection card"
+    },
+    {
+      "filename": "37-battuta-detail.png",
+      "path": "docs/screenshots/37-battuta-detail.png",
+      "viewport": "desktop",
+      "fullPage": true,
+      "state": "battuta collection heading"
+    },
+    {
+      "filename": "38-battuta-products.png",
+      "path": "docs/screenshots/38-battuta-products.png",
+      "viewport": "desktop",
+      "fullPage": true,
+      "state": "battuta product and filter labels"
+    },
+    {
+      "filename": "39-mobile-logo-navigation-battuta.png",
+      "path": "docs/screenshots/39-mobile-logo-navigation-battuta.png",
+      "viewport": "mobile",
+      "fullPage": false,
+      "state": "HOYANG25 mobile navigation and battuta label"
+    },
+    {
+      "filename": "70-search-header-closed-1440.png",
+      "path": "docs/screenshots/70-search-header-closed-1440.png",
+      "viewport": "desktop",
+      "fullPage": false,
+      "state": "Closed desktop search header at 1440px"
+    },
+    {
+      "filename": "71-search-open-desktop-1440.png",
+      "path": "docs/screenshots/71-search-open-desktop-1440.png",
+      "viewport": "desktop",
+      "fullPage": false,
+      "state": "Open desktop search at 1440px"
+    },
+    {
+      "filename": "72-search-suggestions-1440.png",
+      "path": "docs/screenshots/72-search-suggestions-1440.png",
+      "viewport": "desktop",
+      "fullPage": false,
+      "state": "Populated search suggestions at 1440px"
+    },
+    {
+      "filename": "75-search-no-results-1440.png",
+      "path": "docs/screenshots/75-search-no-results-1440.png",
+      "viewport": "desktop",
+      "fullPage": false,
+      "state": "Global search no-results state"
+    },
+    {
+      "filename": "76-search-open-desktop-1024.png",
+      "path": "docs/screenshots/76-search-open-desktop-1024.png",
+      "viewport": "desktop",
+      "fullPage": false,
+      "state": "Open desktop search at 1024px"
+    },
+    {
+      "filename": "77-search-suggestions-1024.png",
+      "path": "docs/screenshots/77-search-suggestions-1024.png",
+      "viewport": "desktop",
+      "fullPage": false,
+      "state": "Populated search suggestions at 1024px"
+    },
+    {
+      "filename": "73-search-mobile-menu-768.png",
+      "path": "docs/screenshots/73-search-mobile-menu-768.png",
+      "viewport": "mobile",
+      "fullPage": false,
+      "state": "Mobile menu search with populated suggestions at 768px"
+    },
+    {
+      "filename": "74-search-mobile-menu-375.png",
+      "path": "docs/screenshots/74-search-mobile-menu-375.png",
+      "viewport": "mobile",
+      "fullPage": false,
+      "state": "Mobile menu search with populated suggestions at 375px"
+    },
+    {
+      "filename": "78-catalog-search-active-filters-1440.png",
+      "path": "docs/screenshots/78-catalog-search-active-filters-1440.png",
+      "viewport": "desktop",
+      "fullPage": false,
+      "state": "Catalog search combined with chrome and Saco filters"
+    }
+  ],
+  "consoleErrors": [],
+  "failedRequests": []
+}

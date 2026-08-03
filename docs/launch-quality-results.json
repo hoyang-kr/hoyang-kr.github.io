@@ -1,0 +1,809 @@
+{
+  "auditedAt": "2026-07-29T17:41:49.317Z",
+  "releaseMode": "development",
+  "browser": "Chromium via Playwright",
+  "routes": [
+    {
+      "name": "homepage",
+      "path": "/",
+      "status": 200,
+      "metrics": {
+        "performance": {
+          "lcpMs": 192,
+          "cls": 0,
+          "domContentLoadedMs": 41.40000000037253,
+          "loadMs": 185.30000000074506,
+          "transferBytes": 335671,
+          "scriptTransferBytes": 233388
+        },
+        "accessibility": {
+          "h1Count": 1,
+          "headingSkips": [],
+          "missingAlt": [],
+          "unlabeledControls": [],
+          "contrastFailures": [],
+          "horizontalOverflow": false,
+          "focusVisible": true,
+          "reducedMotionApplied": true,
+          "fontsStatus": "loaded"
+        },
+        "images": [
+          {
+            "alt": "따뜻한 석재와 스테인리스 디테일이 있는 욕실 공간",
+            "naturalWidth": 864,
+            "naturalHeight": 576,
+            "renderedWidth": 850,
+            "renderedHeight": 672,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fhero%2Fbathroom-architecture-placeholder.png&w=1080&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 0.8716610837438423
+          },
+          {
+            "alt": "바투타 수건걸이 사틴 제품 이미지",
+            "naturalWidth": 111,
+            "naturalHeight": 74,
+            "renderedWidth": 112,
+            "renderedHeight": 72,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fbatuta%2Fbatuta-towel-bar-satin.jpg&w=128&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 1.0186011904761905
+          },
+          {
+            "alt": "바투타 휴지걸이 사틴 제품 이미지",
+            "naturalWidth": 111,
+            "naturalHeight": 74,
+            "renderedWidth": 112,
+            "renderedHeight": 72,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fbatuta%2Fbatuta-toilet-paper-holder-satin.jpg&w=128&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 1.0186011904761905
+          },
+          {
+            "alt": "HG110-1 매립휴지걸이 크롬 제품 이미지",
+            "naturalWidth": 111,
+            "naturalHeight": 112,
+            "renderedWidth": 112,
+            "renderedHeight": 72,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fhg%2Fhg110-1-recessed-holder-chrome.jpg&w=128&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 1.5416666666666667
+          },
+          {
+            "alt": "HG100MS 코너선반 무광 제품 이미지",
+            "naturalWidth": 111,
+            "naturalHeight": 112,
+            "renderedWidth": 112,
+            "renderedHeight": 72,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fhg%2Fhg100ms-corner-shelf-matte.jpg&w=128&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 1.5416666666666667
+          },
+          {
+            "alt": "HG05S 옷걸이 사틴 제품 이미지",
+            "naturalWidth": 111,
+            "naturalHeight": 112,
+            "renderedWidth": 112,
+            "renderedHeight": 72,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fhg%2Fhg05-robe-hook-satin.jpg&w=128&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 1.5416666666666667
+          },
+          {
+            "alt": "HG999 면도경 미확인 제품 이미지",
+            "naturalWidth": 111,
+            "naturalHeight": 112,
+            "renderedWidth": 112,
+            "renderedHeight": 72,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fhg%2Fhg999-shaving-mirror.jpg&w=128&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 1.5416666666666667
+          },
+          {
+            "alt": "바투타 컬렉션 제품 이미지",
+            "naturalWidth": 475,
+            "naturalHeight": 317,
+            "renderedWidth": 443,
+            "renderedHeight": 332,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fbatuta%2Fbatuta-towel-bar-satin.jpg&w=640&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 1.0246336805573149
+          },
+          {
+            "alt": "벨레어 컬렉션 제품 이미지",
+            "naturalWidth": 475,
+            "naturalHeight": 401,
+            "renderedWidth": 443,
+            "renderedHeight": 332,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fbelair%2Fbelair-toilet-paper-holder-chrome.jpg&w=640&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 1.2960386957451775
+          },
+          {
+            "alt": "브리오 컬렉션 제품 이미지",
+            "naturalWidth": 475,
+            "naturalHeight": 317,
+            "renderedWidth": 443,
+            "renderedHeight": 332,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fbrio%2Fbrio-towel-bar-satin.jpg&w=640&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 1.0246336805573149
+          },
+          {
+            "alt": "사코 컬렉션 제품 이미지",
+            "naturalWidth": 475,
+            "naturalHeight": 484,
+            "renderedWidth": 443,
+            "renderedHeight": 332,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fsaco%2Fsaco-toilet-paper-holder-black.jpg&w=640&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 1.5644249255196858
+          },
+          {
+            "alt": "콩코드 컬렉션 제품 이미지",
+            "naturalWidth": 475,
+            "naturalHeight": 317,
+            "renderedWidth": 443,
+            "renderedHeight": 332,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fconcord%2Fconcord-towel-bar-chrome.jpg&w=640&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 1.0245492931451903
+          },
+          {
+            "alt": "콩코드 수건걸이 사틴 제품 이미지",
+            "naturalWidth": 835,
+            "naturalHeight": 545,
+            "renderedWidth": 743,
+            "renderedHeight": 278,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fconcord%2Fconcord-towel-bar-satin.jpg&w=1080&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 2.2031163550137043
+          },
+          {
+            "alt": "콩코드 휴지걸이 사틴 제품 이미지",
+            "naturalWidth": 835,
+            "naturalHeight": 835,
+            "renderedWidth": 743,
+            "renderedHeight": 278,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fconcord%2Fconcord-toilet-paper-holder-satin.jpg&w=1080&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 3.3752270533838247
+          },
+          {
+            "alt": "바투타 수건걸이 사틴 제품 이미지",
+            "naturalWidth": 359,
+            "naturalHeight": 239,
+            "renderedWidth": 324,
+            "renderedHeight": 324,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fbatuta%2Fbatuta-towel-bar-satin.jpg&w=384&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 0.8173392013412589
+          },
+          {
+            "alt": "벨레어 수건걸이 사틴 제품 이미지",
+            "naturalWidth": 359,
+            "naturalHeight": 239,
+            "renderedWidth": 324,
+            "renderedHeight": 324,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fbelair%2Fbelair-towel-bar-satin.jpg&w=384&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 0.8173392013412589
+          },
+          {
+            "alt": "사코 수건걸이 블랙 제품 이미지",
+            "naturalWidth": 359,
+            "naturalHeight": 239,
+            "renderedWidth": 324,
+            "renderedHeight": 324,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fsaco%2Fsaco-towel-bar-black.jpg&w=384&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 0.8173392013412589
+          },
+          {
+            "alt": "콩코드 수건걸이 사틴 제품 이미지",
+            "naturalWidth": 359,
+            "naturalHeight": 235,
+            "renderedWidth": 324,
+            "renderedHeight": 324,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fconcord%2Fconcord-towel-bar-satin.jpg&w=384&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 0.8036598841639994
+          },
+          {
+            "alt": "콩코드 휴지걸이 사틴 제품 이미지",
+            "naturalWidth": 0,
+            "naturalHeight": 0,
+            "renderedWidth": 324,
+            "renderedHeight": 324,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fconcord%2Fconcord-toilet-paper-holder-satin.jpg&w=3840&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 0
+          },
+          {
+            "alt": "HG01MS 슬라이드바 무광 제품 이미지",
+            "naturalWidth": 0,
+            "naturalHeight": 0,
+            "renderedWidth": 324,
+            "renderedHeight": 324,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fhg%2Fhg01ms-slide-bar-matte.png&w=3840&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 0
+          },
+          {
+            "alt": "HG100MS 코너선반 무광 제품 이미지",
+            "naturalWidth": 0,
+            "naturalHeight": 0,
+            "renderedWidth": 324,
+            "renderedHeight": 324,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fhg%2Fhg100ms-corner-shelf-matte.jpg&w=3840&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 0
+          },
+          {
+            "alt": "HG240 폰트레이 매립휴지걸이 미확인 제품 이미지",
+            "naturalWidth": 0,
+            "naturalHeight": 0,
+            "renderedWidth": 324,
+            "renderedHeight": 324,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fhg%2Fhg240-phone-tray-recessed-holder.jpg&w=3840&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 0
+          }
+        ]
+      },
+      "consoleErrors": [],
+      "failedResponses": [],
+      "jsCoverage": {
+        "totalBytes": 866505,
+        "usedBytes": 265241,
+        "unusedPercent": 69.38955920623656
+      }
+    },
+    {
+      "name": "product-listing",
+      "path": "/products",
+      "status": 200,
+      "metrics": {
+        "performance": {
+          "lcpMs": 172,
+          "cls": 0,
+          "domContentLoadedMs": 14.199999999254942,
+          "loadMs": 86.69999999925494,
+          "transferBytes": 131491,
+          "scriptTransferBytes": 9143
+        },
+        "accessibility": {
+          "h1Count": 1,
+          "headingSkips": [],
+          "missingAlt": [],
+          "unlabeledControls": [],
+          "contrastFailures": [],
+          "horizontalOverflow": false,
+          "focusVisible": true,
+          "reducedMotionApplied": true,
+          "fontsStatus": "loaded"
+        },
+        "images": [
+          {
+            "alt": "바투타 수건걸이 사틴 제품 이미지",
+            "naturalWidth": 359,
+            "naturalHeight": 239,
+            "renderedWidth": 252,
+            "renderedHeight": 252,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fbatuta%2Fbatuta-towel-bar-satin.jpg&w=384&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 1.3511117409926934
+          },
+          {
+            "alt": "벨레어 수건걸이 사틴 제품 이미지",
+            "naturalWidth": 359,
+            "naturalHeight": 239,
+            "renderedWidth": 252,
+            "renderedHeight": 252,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fbelair%2Fbelair-towel-bar-satin.jpg&w=384&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 1.3511117409926934
+          },
+          {
+            "alt": "사코 수건걸이 블랙 제품 이미지",
+            "naturalWidth": 359,
+            "naturalHeight": 239,
+            "renderedWidth": 252,
+            "renderedHeight": 252,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fsaco%2Fsaco-towel-bar-black.jpg&w=384&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 1.3511117409926934
+          },
+          {
+            "alt": "콩코드 수건걸이 사틴 제품 이미지",
+            "naturalWidth": 359,
+            "naturalHeight": 235,
+            "renderedWidth": 252,
+            "renderedHeight": 252,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fconcord%2Fconcord-towel-bar-satin.jpg&w=384&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 1.3284989921894683
+          },
+          {
+            "alt": "콩코드 휴지걸이 사틴 제품 이미지",
+            "naturalWidth": 359,
+            "naturalHeight": 359,
+            "renderedWidth": 252,
+            "renderedHeight": 252,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fconcord%2Fconcord-toilet-paper-holder-satin.jpg&w=384&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 2.0294942050894433
+          },
+          {
+            "alt": "HG01MS 슬라이드바 무광 제품 이미지",
+            "naturalWidth": 359,
+            "naturalHeight": 441,
+            "renderedWidth": 252,
+            "renderedHeight": 252,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fhg%2Fhg01ms-slide-bar-matte.png&w=384&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 2.4930555555555554
+          },
+          {
+            "alt": "HG100MS 코너선반 무광 제품 이미지",
+            "naturalWidth": 359,
+            "naturalHeight": 361,
+            "renderedWidth": 252,
+            "renderedHeight": 252,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fhg%2Fhg100ms-corner-shelf-matte.jpg&w=384&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 2.0408005794910555
+          },
+          {
+            "alt": "HG240 폰트레이 매립휴지걸이 미확인 제품 이미지",
+            "naturalWidth": 359,
+            "naturalHeight": 361,
+            "renderedWidth": 252,
+            "renderedHeight": 252,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fhg%2Fhg240-phone-tray-recessed-holder.jpg&w=384&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 2.0408005794910555
+          },
+          {
+            "alt": "HG822 이단수건선반 크롬 제품 이미지",
+            "naturalWidth": 359,
+            "naturalHeight": 233,
+            "renderedWidth": 252,
+            "renderedHeight": 252,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fhg%2Fhg822-double-towel-shelf-chrome.jpg&w=384&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 1.317192617787856
+          },
+          {
+            "alt": "바투타 휴지걸이 사틴 제품 이미지",
+            "naturalWidth": 359,
+            "naturalHeight": 239,
+            "renderedWidth": 252,
+            "renderedHeight": 252,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fbatuta%2Fbatuta-toilet-paper-holder-satin.jpg&w=384&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 1.3511117409926934
+          },
+          {
+            "alt": "벨레어 휴지걸이 사틴 제품 이미지",
+            "naturalWidth": 359,
+            "naturalHeight": 239,
+            "renderedWidth": 252,
+            "renderedHeight": 252,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fbelair%2Fbelair-toilet-paper-holder-satin.jpg&w=384&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 1.3511117409926934
+          },
+          {
+            "alt": "브리오 수건걸이 사틴 제품 이미지",
+            "naturalWidth": 359,
+            "naturalHeight": 239,
+            "renderedWidth": 252,
+            "renderedHeight": 252,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fbrio%2Fbrio-towel-bar-satin.jpg&w=384&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 1.3511117409926934
+          },
+          {
+            "alt": "브리오 휴지걸이 사틴 제품 이미지",
+            "naturalWidth": 359,
+            "naturalHeight": 359,
+            "renderedWidth": 252,
+            "renderedHeight": 252,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fbrio%2Fbrio-toilet-paper-holder-satin.jpg&w=384&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 2.0294942050894433
+          },
+          {
+            "alt": "사코 휴지걸이 블랙 제품 이미지",
+            "naturalWidth": 359,
+            "naturalHeight": 366,
+            "renderedWidth": 252,
+            "renderedHeight": 252,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fsaco%2Fsaco-toilet-paper-holder-black.jpg&w=384&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 2.069066515495087
+          },
+          {
+            "alt": "HG05S 옷걸이 사틴 제품 이미지",
+            "naturalWidth": 359,
+            "naturalHeight": 361,
+            "renderedWidth": 252,
+            "renderedHeight": 252,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fhg%2Fhg05-robe-hook-satin.jpg&w=384&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 2.0408005794910555
+          },
+          {
+            "alt": "HG55S 슬리퍼걸이 사틴 제품 이미지",
+            "naturalWidth": 359,
+            "naturalHeight": 239,
+            "renderedWidth": 252,
+            "renderedHeight": 252,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fhg%2Fhg55s-slipper-rack-satin.jpg&w=384&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 1.3511117409926934
+          },
+          {
+            "alt": "HG110-1 매립휴지걸이 크롬 제품 이미지",
+            "naturalWidth": 359,
+            "naturalHeight": 361,
+            "renderedWidth": 252,
+            "renderedHeight": 252,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fhg%2Fhg110-1-recessed-holder-chrome.jpg&w=384&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 2.0408005794910555
+          },
+          {
+            "alt": "HG110C 매립휴지걸이 크롬 제품 이미지",
+            "naturalWidth": 359,
+            "naturalHeight": 354,
+            "renderedWidth": 252,
+            "renderedHeight": 252,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fhg%2Fhg110c-recessed-holder-chrome.png&w=384&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 2.001228269085412
+          },
+          {
+            "alt": "HG110S 매립휴지걸이 사틴 제품 이미지",
+            "naturalWidth": 359,
+            "naturalHeight": 355,
+            "renderedWidth": 252,
+            "renderedHeight": 252,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fhg%2Fhg110s-recessed-holder-satin.png&w=384&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 2.006881456286218
+          },
+          {
+            "alt": "HG112C 트레이 겸용 매립휴지걸이 크롬 제품 이미지",
+            "naturalWidth": 359,
+            "naturalHeight": 361,
+            "renderedWidth": 252,
+            "renderedHeight": 252,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fhg%2Fhg112c-tray-recessed-holder-chrome.jpg&w=384&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 2.0408005794910555
+          },
+          {
+            "alt": "HG112S 트레이 겸용 매립휴지걸이 사틴 제품 이미지",
+            "naturalWidth": 359,
+            "naturalHeight": 361,
+            "renderedWidth": 252,
+            "renderedHeight": 252,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fhg%2Fhg112s-tray-recessed-holder-satin.png&w=384&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 2.0408005794910555
+          },
+          {
+            "alt": "HG120 일단휴지걸이 미확인 제품 이미지",
+            "naturalWidth": 359,
+            "naturalHeight": 361,
+            "renderedWidth": 252,
+            "renderedHeight": 252,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fhg%2Fhg120-single-paper-holder.jpg&w=384&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 2.0408005794910555
+          },
+          {
+            "alt": "HG392MS 고급형선반 무광 제품 이미지",
+            "naturalWidth": 359,
+            "naturalHeight": 241,
+            "renderedWidth": 252,
+            "renderedHeight": 252,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fhg%2Fhg392ms-premium-shelf-matte.png&w=384&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 1.3624181153943058
+          },
+          {
+            "alt": "HG513 청소솔 미확인 제품 이미지",
+            "naturalWidth": 900,
+            "naturalHeight": 900,
+            "renderedWidth": 252,
+            "renderedHeight": 252,
+            "source": "http://127.0.0.1:44497/images/products/hg/hg513-cleaning-brush-chrome.png",
+            "isVector": true,
+            "overDeliveryRatio": null
+          },
+          {
+            "alt": "HG820C 이단수건선반 크롬 제품 이미지",
+            "naturalWidth": 359,
+            "naturalHeight": 233,
+            "renderedWidth": 252,
+            "renderedHeight": 252,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fhg%2Fhg820-double-towel-shelf-chrome.png&w=384&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 1.317192617787856
+          },
+          {
+            "alt": "HG999 면도경 미확인 제품 이미지",
+            "naturalWidth": 359,
+            "naturalHeight": 361,
+            "renderedWidth": 252,
+            "renderedHeight": 252,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fhg%2Fhg999-shaving-mirror.jpg&w=384&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 2.0408005794910555
+          },
+          {
+            "alt": "HG999-2 면도경 사틴 제품 이미지",
+            "naturalWidth": 359,
+            "naturalHeight": 361,
+            "renderedWidth": 252,
+            "renderedHeight": 252,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fhg%2Fhg999-2-shaving-mirror-satin.jpg&w=384&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 2.0408005794910555
+          }
+        ]
+      },
+      "consoleErrors": [],
+      "failedResponses": [],
+      "jsCoverage": {
+        "totalBytes": 891233,
+        "usedBytes": 279994,
+        "unusedPercent": 68.58352417381313
+      }
+    },
+    {
+      "name": "towel-bar-detail",
+      "path": "/products/concord-towel-bar",
+      "status": 200,
+      "metrics": {
+        "performance": {
+          "lcpMs": 64,
+          "cls": 0,
+          "domContentLoadedMs": 14.699999999254942,
+          "loadMs": 92.29999999888241,
+          "transferBytes": 34768,
+          "scriptTransferBytes": 0
+        },
+        "accessibility": {
+          "h1Count": 1,
+          "headingSkips": [],
+          "missingAlt": [],
+          "unlabeledControls": [],
+          "contrastFailures": [],
+          "horizontalOverflow": false,
+          "focusVisible": true,
+          "reducedMotionApplied": true,
+          "fontsStatus": "loaded"
+        },
+        "images": [
+          {
+            "alt": "콩코드 수건걸이 사틴 제품 이미지",
+            "naturalWidth": 806,
+            "naturalHeight": 526,
+            "renderedWidth": 851,
+            "renderedHeight": 638,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fconcord%2Fconcord-towel-bar-satin.jpg&w=828&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 0.7815393487459712
+          },
+          {
+            "alt": "콩코드 휴지걸이 사틴 제품 이미지",
+            "naturalWidth": 359,
+            "naturalHeight": 359,
+            "renderedWidth": 324,
+            "renderedHeight": 324,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fconcord%2Fconcord-toilet-paper-holder-satin.jpg&w=384&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 1.227718716659046
+          }
+        ]
+      },
+      "consoleErrors": [],
+      "failedResponses": [],
+      "jsCoverage": {
+        "totalBytes": 891233,
+        "usedBytes": 273870,
+        "unusedPercent": 69.27066210519584
+      }
+    },
+    {
+      "name": "toilet-paper-holder-detail",
+      "path": "/products/belair-toilet-paper-holder",
+      "status": 200,
+      "metrics": {
+        "performance": {
+          "lcpMs": 64,
+          "cls": 0,
+          "domContentLoadedMs": 15.599999999627471,
+          "loadMs": 102.09999999962747,
+          "transferBytes": 36116,
+          "scriptTransferBytes": 0
+        },
+        "accessibility": {
+          "h1Count": 1,
+          "headingSkips": [],
+          "missingAlt": [],
+          "unlabeledControls": [],
+          "contrastFailures": [],
+          "horizontalOverflow": false,
+          "focusVisible": true,
+          "reducedMotionApplied": true,
+          "fontsStatus": "loaded"
+        },
+        "images": [
+          {
+            "alt": "벨레어 휴지걸이 사틴 제품 이미지",
+            "naturalWidth": 806,
+            "naturalHeight": 537,
+            "renderedWidth": 851,
+            "renderedHeight": 638,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fbelair%2Fbelair-toilet-paper-holder-satin.jpg&w=828&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 0.7978833275220276
+          },
+          {
+            "alt": "벨레어 수건걸이 사틴 제품 이미지",
+            "naturalWidth": 359,
+            "naturalHeight": 239,
+            "renderedWidth": 324,
+            "renderedHeight": 324,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fbelair%2Fbelair-towel-bar-satin.jpg&w=384&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 0.8173392013412589
+          }
+        ]
+      },
+      "consoleErrors": [],
+      "failedResponses": [],
+      "jsCoverage": {
+        "totalBytes": 891233,
+        "usedBytes": 273860,
+        "unusedPercent": 69.27178414623336
+      }
+    },
+    {
+      "name": "hg-product-detail",
+      "path": "/products/hg110-1-recessed-holder",
+      "status": 200,
+      "metrics": {
+        "performance": {
+          "lcpMs": 68,
+          "cls": 0,
+          "domContentLoadedMs": 16.59999999962747,
+          "loadMs": 110.5,
+          "transferBytes": 36878,
+          "scriptTransferBytes": 0
+        },
+        "accessibility": {
+          "h1Count": 1,
+          "headingSkips": [],
+          "missingAlt": [],
+          "unlabeledControls": [],
+          "contrastFailures": [],
+          "horizontalOverflow": false,
+          "focusVisible": true,
+          "reducedMotionApplied": true,
+          "fontsStatus": "loaded"
+        },
+        "images": [
+          {
+            "alt": "HG110-1 매립휴지걸이 크롬 제품 이미지",
+            "naturalWidth": 485,
+            "naturalHeight": 486,
+            "renderedWidth": 851,
+            "renderedHeight": 638,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fhg%2Fhg110-1-recessed-holder-chrome.jpg&w=828&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 0.4345182988161811
+          },
+          {
+            "alt": "HG110C 매립휴지걸이 크롬 제품 이미지",
+            "naturalWidth": 359,
+            "naturalHeight": 354,
+            "renderedWidth": 324,
+            "renderedHeight": 324,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fhg%2Fhg110c-recessed-holder-chrome.png&w=384&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 1.2106195701874713
+          },
+          {
+            "alt": "HG110S 매립휴지걸이 사틴 제품 이미지",
+            "naturalWidth": 359,
+            "naturalHeight": 355,
+            "renderedWidth": 324,
+            "renderedHeight": 324,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fhg%2Fhg110s-recessed-holder-satin.png&w=384&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 1.2140393994817864
+          }
+        ]
+      },
+      "consoleErrors": [],
+      "failedResponses": [],
+      "jsCoverage": {
+        "totalBytes": 891233,
+        "usedBytes": 271375,
+        "unusedPercent": 69.5506113440593
+      }
+    },
+    {
+      "name": "collection",
+      "path": "/collections/concord",
+      "status": 200,
+      "metrics": {
+        "performance": {
+          "lcpMs": 64,
+          "cls": 0,
+          "domContentLoadedMs": 16,
+          "loadMs": 100.5,
+          "transferBytes": 47952,
+          "scriptTransferBytes": 7277
+        },
+        "accessibility": {
+          "h1Count": 1,
+          "headingSkips": [],
+          "missingAlt": [],
+          "unlabeledControls": [],
+          "contrastFailures": [],
+          "horizontalOverflow": false,
+          "focusVisible": true,
+          "reducedMotionApplied": true,
+          "fontsStatus": "loaded"
+        },
+        "images": [
+          {
+            "alt": "콩코드 컬렉션 제품 이미지",
+            "naturalWidth": 720,
+            "naturalHeight": 480,
+            "renderedWidth": 688,
+            "renderedHeight": 544,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fconcord%2Fconcord-towel-bar-chrome.jpg&w=750&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 0.9233926128590971
+          },
+          {
+            "alt": "콩코드 수건걸이 사틴 제품 이미지",
+            "naturalWidth": 359,
+            "naturalHeight": 235,
+            "renderedWidth": 324,
+            "renderedHeight": 324,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fconcord%2Fconcord-towel-bar-satin.jpg&w=384&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 0.8036598841639994
+          },
+          {
+            "alt": "콩코드 휴지걸이 사틴 제품 이미지",
+            "naturalWidth": 359,
+            "naturalHeight": 359,
+            "renderedWidth": 324,
+            "renderedHeight": 324,
+            "source": "http://127.0.0.1:44497/_next/image?url=%2Fimages%2Fproducts%2Fconcord%2Fconcord-toilet-paper-holder-satin.jpg&w=384&q=75",
+            "isVector": false,
+            "overDeliveryRatio": 1.227718716659046
+          }
+        ]
+      },
+      "consoleErrors": [],
+      "failedResponses": [],
+      "jsCoverage": {
+        "totalBytes": 885858,
+        "usedBytes": 267496,
+        "unusedPercent": 69.80373829665703
+      }
+    }
+  ],
+  "interactionFindings": [],
+  "findings": []
+}

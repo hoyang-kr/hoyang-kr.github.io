@@ -1,0 +1,26 @@
+# SEO 운영 데이터 템플릿입니다.
+# seo.yaml로 복사한 뒤 검증된 브랜드 문구와 운영 origin만 입력하세요.
+
+# 운영 도메인 호스트명 | production 필수 | 예시 형식: brand.co.kr
+productionDomain: ""
+# canonical 기준 HTTPS origin | production 필수 | 예시 형식: https://brand.co.kr
+canonicalOrigin: ""
+# 기본 한국어 문서 제목 | production 필수
+defaultTitle: ""
+# 페이지 제목 템플릿 | production 필수 | %s를 페이지 제목 위치로 사용
+titleTemplate: "%s | "
+# 기본 한국어 설명 | production 필수
+defaultDescription: ""
+# 공개 디렉터리 기준 소셜 공유 이미지 경로 | production 필수
+openGraphImage: ""
+# Organization 구조화 데이터의 공식 조직명 | production 필수
+organizationName: ""
+# Organization 구조화 데이터의 로고 경로 또는 HTTPS URL | production 필수
+organizationLogo: ""
+searchEngineVerification:
+  # Google Search Console 검증 토큰 | 선택
+  google: ""
+  # Naver Search Advisor 검증 토큰 | 선택
+  naver: ""
+  # 기타 검색엔진 이름과 검증 토큰 | 선택
+  other: {}

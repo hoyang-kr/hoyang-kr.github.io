@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 1,
+  "sourceHash": "unconfigured-preview-data",
+  "brand": {
+    "brandNameKo": "HOYANG",
+    "brandNameEn": "HOYANG",
+    "legalCompanyNameKo": "(주) 호양산업",
+    "legalCompanyNameEn": "",
+    "logoPath": "/images/brand/hoyang-logo.png",
+    "logoAlt": "HOYANG25 로고",
+    "faviconPath": "/images/brand/hoyang-logo.png",
+    "heroImagePath": "/images/hero/bathroom-architecture-placeholder.png",
+    "heroImageAlt": "따뜻한 석재와 스테인리스 디테일이 있는 욕실 공간",
+    "primaryBrandDescription": "공간에 자연스럽게 어우러지는 욕실을 제안합니다.",
+    "shortBrandDescription": "욕실 액세서리 카탈로그",
+    "establishedYear": null,
+    "manufacturerRelationship": "",
+    "hoyangRelationshipStatement": "",
+    "imageRightsConfirmed": false,
+    "trademarkRightsConfirmed": false,
+    "productImageOwner": "",
+    "productImageLicenseStatus": "unverified",
+    "embeddedBrandName": "HOYANG",
+    "embeddedBrandRelationship": "",
+    "permittedPublicUse": false,
+    "permittedModification": false,
+    "attributionRequired": false,
+    "confirmationDocumentReference": ""
+  },
+  "company": {
+    "representativeName": "Lee Kyung En",
+    "businessRegistrationNumber": "정보 준비 중",
+    "mailOrderRegistrationRequired": true,
+    "mailOrderRegistrationNumber": "정보 준비 중",
+    "businessAddress": "경기 남양주시 불암산로 39번길 35",
+    "customerServicePhone": "031-529-8761",
+    "faxNumber": "031-529-8763",
+    "customerServiceEmail": "정보 준비 중",
+    "operatingHours": "평일 오전 9시 ~ 오후 6시",
+    "privacyOfficer": "정보 준비 중",
+    "wholesaleInquiryEmail": "",
+    "wholesaleInquiryPhone": ""
+  },
+  "online": {
+    "productionDomain": "",
+    "canonicalBaseUrl": "https://example.com",
+    "naverStoreHomepageUrl": "",
+    "instagramUrl": "",
+    "naverBlogUrl": "",
+    "kakaoChannelUrl": "",
+    "approvedNaverStoreHosts": ["smartstore.naver.com", "brand.naver.com"]
+  },
+  "customerPolicy": {
+    "warrantySummary": "정보 준비 중",
+    "asPolicySummary": "정보 준비 중",
+    "returnExchangeSummary": "정보 준비 중",
+    "installationResponsibilityStatement": "정보 준비 중",
+    "productCareSummary": "정보 준비 중",
+    "deliveryInformationSummary": "정보 준비 중",
+    "customerSupportInstructions": "정보 준비 중"
+  },
+  "legal": {
+    "privacyPolicyStatus": "draft",
+    "termsStatus": "draft",
+    "legalReviewCompleted": false,
+    "legalReviewDate": "",
+    "legalReviewer": "",
+    "privacyPolicyEffectiveDate": "",
+    "termsEffectiveDate": "",
+    "privacyPolicySections": [],
+    "termsSections": []
+  },
+  "seo": {
+    "defaultTitle": "HOYANG | 욕실 액세서리",
+    "titleTemplate": "%s | HOYANG",
+    "defaultDescription": "공간에 자연스럽게 어우러지는 욕실을 제안합니다.",
+    "openGraphImage": "/images/hero/bathroom-architecture-placeholder.png",
+    "organizationName": "HOYANG",
+    "organizationLogo": "/images/brand/hoyang-logo.png",
+    "searchEngineVerification": {
+      "google": "",
+      "naver": "",
+      "other": {}
+    }
+  },
+  "deployment": {
+    "releaseMode": "development"
+  },
+  "products": [],
+  "naverLinks": [],
+  "catalogConfirmations": {
+    "sacoSpelling": {
+      "status": "confirmed",
+      "confirmedBy": "project owner",
+      "confirmationDate": "2026-07-30",
+      "evidenceReference": "Project owner correction",
+      "notes": "공식 표기는 사코 (saco)"
+    },
+    "hg513ImageRelationship": {
+      "status": "unresolved",
+      "confirmedBy": "",
+      "confirmationDate": "",
+      "evidenceReference": "",
+      "notes": ""
+    },
+    "hg1101Relationship": {
+      "status": "unresolved",
+      "confirmedBy": "",
+      "confirmationDate": "",
+      "evidenceReference": "",
+      "notes": ""
+    },
+    "hg110cRelationship": {
+      "status": "unresolved",
+      "confirmedBy": "",
+      "confirmationDate": "",
+      "evidenceReference": "",
+      "notes": ""
+    },
+    "hg110sRelationship": {
+      "status": "unresolved",
+      "confirmedBy": "",
+      "confirmationDate": "",
+      "evidenceReference": "",
+      "notes": ""
+    },
+    "hg112cRelationship": {
+      "status": "unresolved",
+      "confirmedBy": "",
+      "confirmationDate": "",
+      "evidenceReference": "",
+      "notes": ""
+    },
+    "hg112sRelationship": {
+      "status": "unresolved",
+      "confirmedBy": "",
+      "confirmationDate": "",
+      "evidenceReference": "",
+      "notes": ""
+    },
+    "hg822cRelationship": {
+      "status": "confirmed",
+      "confirmedBy": "project owner",
+      "confirmationDate": "2026-07-30",
+      "evidenceReference": "Catalog update request",
+      "notes": "HG822C 크롬은 독립 제품 및 독립 canonical 경로로 운영."
+    },
+    "hg822sRelationship": {
+      "status": "confirmed",
+      "confirmedBy": "project owner",
+      "confirmationDate": "2026-07-30",
+      "evidenceReference": "Catalog update request",
+      "notes": "HG822S 사틴은 독립 제품 및 독립 canonical 경로로 운영."
+    },
+    "hg999Relationship": {
+      "status": "unresolved",
+      "confirmedBy": "",
+      "confirmationDate": "",
+      "evidenceReference": "",
+      "notes": ""
+    },
+    "hg9992Relationship": {
+      "status": "unresolved",
+      "confirmedBy": "",
+      "confirmationDate": "",
+      "evidenceReference": "",
+      "notes": ""
+    },
+    "matteFinishMeaning": {
+      "status": "unresolved",
+      "confirmedBy": "",
+      "confirmationDate": "",
+      "evidenceReference": "",
+      "notes": ""
+    },
+    "duplicateBatutaBelairSatin": {
+      "status": "confirmed",
+      "confirmedBy": "project owner",
+      "confirmationDate": "2026-08-02",
+      "evidenceReference": "Catalog update request",
+      "notes": "바투타 및 벨레어 휴지걸이는 동일한 제품이며 하나의 제품으로 관리하고 두 컬렉션에 공통으로 노출한다."
+    },
+    "duplicateBrioConcordSatin": {
+      "status": "unresolved",
+      "confirmedBy": "",
+      "confirmationDate": "",
+      "evidenceReference": "",
+      "notes": ""
+    },
+    "duplicateBrioConcordChrome": {
+      "status": "unresolved",
+      "confirmedBy": "",
+      "confirmationDate": "",
+      "evidenceReference": "",
+      "notes": ""
+    },
+    "hoyangBrandRelationship": {
+      "status": "unresolved",
+      "confirmedBy": "",
+      "confirmationDate": "",
+      "evidenceReference": "",
+      "notes": ""
+    },
+    "hoyangImageUsageRights": {
+      "status": "unresolved",
+      "confirmedBy": "",
+      "confirmationDate": "",
+      "evidenceReference": "",
+      "notes": ""
+    },
+    "productImageOwnership": {
+      "status": "unresolved",
+      "confirmedBy": "",
+      "confirmationDate": "",
+      "evidenceReference": "",
+      "notes": ""
+    },
+    "collectionOwnershipAndNamingRights": {
+      "status": "unresolved",
+      "confirmedBy": "",
+      "confirmationDate": "",
+      "evidenceReference": "",
+      "notes": ""
+    },
+    "trademarkUsageRights": {
+      "status": "unresolved",
+      "confirmedBy": "",
+      "confirmationDate": "",
+      "evidenceReference": "",
+      "notes": ""
+    }
+  },
+  "catalogCorrections": [
+    {
+      "correctionId": "redirect-hg822-family-to-hg822c",
+      "status": "verified",
+      "productId": "hg822c",
+      "variantId": "",
+      "displayNameKo": "",
+      "collection": "",
+      "category": "",
+      "finish": "",
+      "modelNumber": "",
+      "imagePath": "",
+      "customerVisible": null,
+      "relatedProductIds": [],
+      "newSlug": "hg822c-double-towel-shelf",
+      "previousSlugs": ["hg822-double-towel-shelf"],
+      "targetProductId": "",
+      "evidenceReference": "Catalog update request",
+      "verifiedBy": "project owner",
+      "verificationDate": "2026-07-30",
+      "notes": "기존 결합 HG822 경로를 독립 HG822C 제품으로 영구 리디렉션."
+    }
+  ]
+}

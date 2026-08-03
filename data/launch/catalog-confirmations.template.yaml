@@ -1,0 +1,150 @@
+# 카탈로그 사업 확인 템플릿입니다.
+# catalog-confirmations.yaml로 복사해 각 항목을 실제 증거로 확인하세요.
+# status: unresolved | confirmed | not-applicable
+# production에서는 unresolved가 허용되지 않으며 확인자, 날짜, 증거 참조가 필요합니다.
+
+confirmations:
+  sacoSpelling:
+    status: confirmed
+    confirmedBy: "project owner"
+    confirmationDate: "2026-07-30"
+    evidenceReference: "Project owner correction"
+    notes: "공식 표기는 사코 (saco)"
+  hg513ImageRelationship:
+    status: unresolved
+    confirmedBy: ""
+    confirmationDate: ""
+    evidenceReference: ""
+    notes: "마감 미표기 이미지가 판매 변형인지 대체 이미지인지 확인"
+  hg1101Relationship:
+    status: unresolved
+    confirmedBy: ""
+    confirmationDate: ""
+    evidenceReference: ""
+    notes: "HG110-1의 독립 제품 패밀리 여부 확인"
+  hg110cRelationship:
+    status: unresolved
+    confirmedBy: ""
+    confirmationDate: ""
+    evidenceReference: ""
+    notes: "HG110C의 독립 판매 단위와 C 표기 의미 확인"
+  hg110sRelationship:
+    status: unresolved
+    confirmedBy: ""
+    confirmationDate: ""
+    evidenceReference: ""
+    notes: "HG110S의 독립 판매 단위와 S 표기 의미 확인"
+  hg112cRelationship:
+    status: unresolved
+    confirmedBy: ""
+    confirmationDate: ""
+    evidenceReference: ""
+    notes: "HG112C를 독립 패밀리로 유지할지 확인"
+  hg112sRelationship:
+    status: unresolved
+    confirmedBy: ""
+    confirmationDate: ""
+    evidenceReference: ""
+    notes: "HG112S를 독립 패밀리로 유지할지 확인"
+  hg822cRelationship:
+    status: confirmed
+    confirmedBy: "project owner"
+    confirmationDate: "2026-07-30"
+    evidenceReference: "Catalog update request"
+    notes: "HG822C 크롬은 독립 제품 및 독립 canonical 경로로 운영"
+  hg822sRelationship:
+    status: confirmed
+    confirmedBy: "project owner"
+    confirmationDate: "2026-07-30"
+    evidenceReference: "Catalog update request"
+    notes: "HG822S 사틴은 독립 제품 및 독립 canonical 경로로 운영"
+  hg999Relationship:
+    status: unresolved
+    confirmedBy: ""
+    confirmationDate: ""
+    evidenceReference: ""
+    notes: "HG999를 HG999-2와 별도 제품으로 유지할지 확인"
+  hg9992Relationship:
+    status: unresolved
+    confirmedBy: ""
+    confirmationDate: ""
+    evidenceReference: ""
+    notes: "HG999-2를 HG999와 별도 제품으로 유지할지 확인"
+  matteFinishMeaning:
+    status: unresolved
+    confirmedBy: ""
+    confirmationDate: ""
+    evidenceReference: ""
+    notes: "무광이 공식 고객 표시 마감명인지 확인"
+  duplicateBatutaBelairSatin:
+    status: unresolved
+    confirmedBy: ""
+    confirmationDate: ""
+    evidenceReference: ""
+    notes: "바투타/벨레어 사틴 휴지걸이의 바이트 동일 이미지 사용 사유 확인"
+  duplicateBrioConcordSatin:
+    status: unresolved
+    confirmedBy: ""
+    confirmationDate: ""
+    evidenceReference: ""
+    notes: "브리오/콩코드 사틴 휴지걸이의 바이트 동일 이미지 사용 사유 확인"
+  duplicateBrioConcordChrome:
+    status: unresolved
+    confirmedBy: ""
+    confirmationDate: ""
+    evidenceReference: ""
+    notes: "브리오/콩코드 크롬 휴지걸이의 바이트 동일 이미지 사용 사유 확인"
+  hoyangBrandRelationship:
+    status: unresolved
+    confirmedBy: ""
+    confirmationDate: ""
+    evidenceReference: ""
+    notes: "HOYANG과 사이트 브랜드/운영 사업자의 관계 확인"
+  hoyangImageUsageRights:
+    status: unresolved
+    confirmedBy: ""
+    confirmationDate: ""
+    evidenceReference: ""
+    notes: "HOYANG 표식 포함 이미지의 공개 사용과 수정 범위 확인"
+  productImageOwnership:
+    status: unresolved
+    confirmedBy: ""
+    confirmationDate: ""
+    evidenceReference: ""
+    notes: "37개 원본 제품 이미지의 소유자 또는 라이선스 제공자 확인"
+  collectionOwnershipAndNamingRights:
+    status: unresolved
+    confirmedBy: ""
+    confirmationDate: ""
+    evidenceReference: ""
+    notes: "컬렉션명 소유와 고객 표시 권한 확인"
+  trademarkUsageRights:
+    status: unresolved
+    confirmedBy: ""
+    confirmationDate: ""
+    evidenceReference: ""
+    notes: "브랜드명, HOYANG 표식, 제품/컬렉션명 상표 사용 권한 확인"
+
+# 검증된 수정만 추가합니다. 원본 카탈로그 증거는 변경하지 않습니다.
+# status가 verified인 수정만 고객 화면에 적용됩니다.
+catalogCorrections: []
+# 항목 예시 형식(실제 값 아님):
+# - correctionId: verified-correction-reference
+#   status: unverified
+#   productId: ""
+#   variantId: ""
+#   displayNameKo: ""
+#   collection: ""
+#   category: ""
+#   finish: ""
+#   modelNumber: ""
+#   imagePath: ""
+#   customerVisible: null
+#   relatedProductIds: []
+#   newSlug: ""
+#   previousSlugs: []
+#   targetProductId: ""
+#   evidenceReference: ""
+#   verifiedBy: ""
+#   verificationDate: ""
+#   notes: ""
