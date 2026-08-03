@@ -34,7 +34,6 @@ export function GlobalSearch({
   const isComposingRef = useRef(false);
   const instanceId = useId().replaceAll(":", "");
   const resultsId = "search-results-" + instanceId;
-  const [inputValue, setInputValue] = useState("");
   const [query, setQuery] = useState("");
   const [activeIndex, setActiveIndex] = useState(-1);
   const commitQuery = (value: string) => {
@@ -67,12 +66,12 @@ export function GlobalSearch({
     router.push(href);
   };
   const submit = () => {
-    const submittedQuery = inputValue.trim();
+    const submittedQuery = inputRef.current?.value.trim() ?? "";
 
     if (!normalizeSearchText(submittedQuery)) return;
 
     if (submittedQuery !== query.trim()) {
-      commitQuery(inputValue);
+      commitQuery(inputRef.current?.value ?? "");
     }
 
     navigate("/products?q=" + encodeURIComponent(submittedQuery));
@@ -109,26 +108,18 @@ export function GlobalSearch({
           className="h-12 min-w-0 flex-1 bg-transparent pr-3 text-base outline-none placeholder:text-muted md:text-sm"
           id={"product-search-" + instanceId}
           onChange={(event) => {
-            const nextValue = event.currentTarget.value;
             const nativeEvent = event.nativeEvent as InputEvent;
 
-            setInputValue(nextValue);
+            if (isComposingRef.current || nativeEvent.isComposing) return;
 
-            if (!isComposingRef.current && !nativeEvent.isComposing) {
-              commitQuery(nextValue);
-            }
+            commitQuery(event.currentTarget.value);
           }}
           onCompositionEnd={(event) => {
             isComposingRef.current = false;
-
-            const completedValue = event.currentTarget.value;
-
-            setInputValue(completedValue);
-            commitQuery(completedValue);
+            commitQuery(event.currentTarget.value);
           }}
           onCompositionStart={() => {
             isComposingRef.current = true;
-            setActiveIndex(-1);
           }}
           onKeyDown={(event) => {
             const isComposing =
@@ -162,7 +153,7 @@ export function GlobalSearch({
           ref={inputRef}
           role="combobox"
           type="search"
-          value={inputValue}
+          defaultValue=""
         />
         <button
           className="min-h-11 border-l border-line px-4 text-sm font-semibold hover:text-brand"
