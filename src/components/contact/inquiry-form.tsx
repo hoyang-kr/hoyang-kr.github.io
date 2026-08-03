@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { InquiryImageUploader } from "@/components/contact/inquiry-image-uploader";
 import {
   catalogProducts,
   collections,
@@ -13,6 +14,10 @@ import {
 } from "@/lib/inquiry-form";
 import { siteConfig } from "@/config/site";
 import { productBelongsToCollection } from "@/lib/catalog";
+import {
+  deduplicateInquiryImages,
+  validateInquiryImages,
+} from "@/lib/inquiry-images";
 import { inquiryTypes, type InquiryValues } from "@/types/inquiry";
 
 const endpoint = process.env.NEXT_PUBLIC_INQUIRY_ENDPOINT;
@@ -42,6 +47,16 @@ const empty: InquiryValues = {
 };
 const control =
   "mt-2 min-h-11 w-full border border-line bg-white px-3 py-2 text-sm focus-visible:outline";
+const validationFieldOrder: (keyof InquiryValues)[] = [
+  "inquiryType",
+  "customerName",
+  "customerEmail",
+  "productId",
+  "purchaseSource",
+  "purchaseId",
+  "purchaseDate",
+  "message",
+];
 
 export function InquiryForm() {
   const params = useSearchParams();
@@ -56,6 +71,8 @@ export function InquiryForm() {
   const [errors, setErrors] = useState<
     Partial<Record<keyof InquiryValues, string>>
   >({});
+  const [images, setImages] = useState<File[]>([]);
+  const [imageError, setImageError] = useState("");
   const [state, setState] = useState<
     "idle" | "submitting" | "success" | "error"
   >("idle");
@@ -79,13 +96,43 @@ export function InquiryForm() {
         {errors[key]}
       </p>
     ) : null;
+  const updateImages = (nextFiles: File[]) => {
+    const deduplicated = deduplicateInquiryImages(nextFiles);
+    const validation = validateInquiryImages(deduplicated.files);
+
+    if (!validation.valid) {
+      setImageError(validation.message);
+      return;
+    }
+
+    setImages(deduplicated.files);
+    setImageError(
+      deduplicated.duplicateCount > 0
+        ? "이미 선택한 이미지는 다시 추가되지 않습니다."
+        : "",
+    );
+  };
   async function submit(event: React.FormEvent) {
     event.preventDefault();
     if (state === "submitting") return;
     const nextErrors = validateInquiry(values);
+    const nextImageValidation = validateInquiryImages(images);
     setErrors(nextErrors);
-    if (Object.keys(nextErrors).length) {
-      document.getElementById(Object.keys(nextErrors)[0])?.focus();
+    setImageError(nextImageValidation.valid ? "" : nextImageValidation.message);
+    const firstFormError = validationFieldOrder.find((key) => nextErrors[key]);
+    if (firstFormError) {
+      document.getElementById(firstFormError)?.focus();
+      return;
+    }
+    if (!nextImageValidation.valid) {
+      document.getElementById("inquiry-images-control")?.focus();
+      document
+        .getElementById("inquiry-images-control")
+        ?.scrollIntoView({ behavior: "smooth", block: "center" });
+      return;
+    }
+    if (nextErrors.privacyConsent) {
+      document.getElementById("privacyConsent")?.focus();
       return;
     }
     if (
@@ -102,6 +149,7 @@ export function InquiryForm() {
     const variant =
       variantsForProduct.find((v) => v.id === values.variantId) ??
       (variantsForProduct.length === 1 ? variantsForProduct[0] : undefined);
+    const submissionId = crypto.randomUUID();
     const payload = {
       subject: `[HOYANG 문의] ${values.inquiryType}${product ? ` · ${product.nameKo}` : ""}`,
       inquiryType: values.inquiryType,
@@ -123,18 +171,27 @@ export function InquiryForm() {
       pageUrl: window.location.href,
       privacyConsent: values.privacyConsent,
     };
+    const formData = new FormData();
+    formData.append(
+      "payload",
+      JSON.stringify({ ...payload, submissionId, website: values.website }),
+    );
+    images.forEach((file) => {
+      formData.append("images", file, file.name);
+    });
     setState("submitting");
     try {
       const response = await fetch(endpoint!, {
         method: "POST",
         headers: {
           Accept: "application/json",
-          "Content-Type": "application/json",
         },
-        body: JSON.stringify(payload),
+        body: formData,
       });
       if (!response.ok) throw new Error();
       setState("success");
+      setImages([]);
+      setImageError("");
       setValues((v) => ({
         ...empty,
         inquiryType: v.inquiryType,
@@ -296,6 +353,12 @@ export function InquiryForm() {
         />
         {error("message")}
       </div>
+      <InquiryImageUploader
+        disabled={!formEnabled || state === "submitting"}
+        error={imageError}
+        files={images}
+        onChange={updateImages}
+      />
       <div>
         <label className="flex items-start gap-3 text-sm">
           <input

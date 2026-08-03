@@ -1,0 +1,11 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "hoyang-inquiry-email",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-08-03",
+  "compatibility_flags": ["nodejs_compat"],
+  "vars": {
+    "ALLOWED_ORIGINS": "https://hoyang.co.kr,https://www.hoyang.co.kr,https://hoyang-kr.github.io,http://localhost:3000",
+    "INQUIRY_FROM_EMAIL": "HOYANG 문의 <inquiry@send.hoyang.co.kr>",
+  },
+}

@@ -23,7 +23,7 @@
     "format:check": "prettier --check .",
     "review:visual": "tsx scripts/capture-visual-review.ts",
     "validate:catalog": "tsx scripts/validate-catalog-integrity.ts",
-    "test": "tsx --test tests/product-variant.test.ts tests/catalog-search.test.ts tests/dealer-search.test.ts tests/dealer-map.test.ts",
+    "test": "tsx --test tests/product-variant.test.ts tests/catalog-search.test.ts tests/dealer-search.test.ts tests/dealer-map.test.ts tests/inquiry-images.test.ts",
     "verify:deployed": "tsx scripts/verify-deployed-site.ts"
   },
   "dependencies": {
