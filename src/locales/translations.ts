@@ -261,6 +261,8 @@ const productNames: Record<string, string> = {
   옷걸이: "Robe Hook",
   슬리퍼걸이: "Slipper Rack",
   코너선반: "Corner Shelf",
+  "트레이 겸용 매립휴지걸이": "Recessed Toilet Paper Holder with Tray",
+  "폰&트레이 매립휴지걸이": "Recessed Phone & Tray Toilet Paper Holder",
   매립휴지걸이: "Recessed Toilet Paper Holder",
   일단휴지걸이: "Single Toilet Paper Holder",
   "폰트레이 매립휴지걸이": "Recessed Phone Tray Holder",

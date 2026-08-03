@@ -6,7 +6,7 @@ import { PageIntro } from "@/components/ui/page-intro";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "고객지원",
+  title: "Support",
   description: "제품 자료, 설치, 관리와 구매 관련 안내를 확인하세요.",
   alternates: {
     canonical: "/support",

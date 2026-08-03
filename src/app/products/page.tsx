@@ -8,7 +8,7 @@ import { collections } from "@/data/collections";
 import { finishes, products } from "@/data/products";
 
 export const metadata: Metadata = {
-  title: "전체 제품",
+  title: "All Products",
   description: "욕실 액세서리를 카테고리, 컬렉션, 마감별로 찾아보세요.",
   alternates: {
     canonical: "/products",

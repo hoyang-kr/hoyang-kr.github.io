@@ -6,7 +6,7 @@ import { isPreviewRelease } from "@/config/launch-data";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "이용약관",
+  title: "Terms of Use",
   description:
     siteConfig.legal.termsStatus === "final"
       ? "웹사이트 이용약관입니다."

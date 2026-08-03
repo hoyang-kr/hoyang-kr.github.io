@@ -6,6 +6,7 @@ import { RelatedProducts } from "@/components/catalog/related-products";
 import { getProductBySlug, getProductsByIds, products } from "@/data/products";
 import { productCollectionNames } from "@/lib/catalog";
 import { buildProductStructuredData } from "@/lib/structured-data";
+import { translateProductName } from "@/locales/translations";
 
 type ProductPageProps = {
   params: Promise<{ slug: string }>;
@@ -25,18 +26,19 @@ export async function generateMetadata({
   if (!product) return {};
 
   const collectionLabel = productCollectionNames(product).join(" / ");
+  const title = product.nameEn ?? translateProductName(product.nameKo);
   const description =
     product.shortDescription ??
     `${collectionLabel} ${product.nameKo} 제품 정보`;
 
   return {
-    title: product.nameKo,
+    title,
     description,
     alternates: {
       canonical: `/products/${product.slug}`,
     },
     openGraph: {
-      title: product.nameKo,
+      title: `HOYANG | ${title}`,
       description,
       images: [
         {

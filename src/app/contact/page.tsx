@@ -7,7 +7,7 @@ import { isPlaceholderValue } from "@/config/launch-data";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "문의",
+  title: "Contact",
   description: "제품, 주문, 설치와 고객지원 문의를 접수합니다.",
   alternates: { canonical: "/contact" },
 };

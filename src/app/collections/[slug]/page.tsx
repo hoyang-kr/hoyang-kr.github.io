@@ -27,14 +27,16 @@ export async function generateMetadata({
   const collection = getCollection(slug);
   if (!collection) return {};
 
+  const title = `${collection.nameEn} Collection`;
+
   return {
-    title: `${collection.nameKo} 컬렉션`,
+    title,
     description: collection.description,
     alternates: {
       canonical: `/collections/${collection.slug}`,
     },
     openGraph: {
-      title: `${collection.nameKo} 컬렉션`,
+      title: `HOYANG | ${title}`,
       description: collection.description,
       images: [{ url: collection.image, alt: `${collection.nameKo} 컬렉션` }],
     },

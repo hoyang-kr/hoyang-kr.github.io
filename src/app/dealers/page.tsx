@@ -5,7 +5,7 @@ import { PageIntro } from "@/components/ui/page-intro";
 import { dealers } from "@/data/dealers";
 
 export const metadata: Metadata = {
-  title: "공식 대리점",
+  title: "Official Dealers",
   description: "가까운 HOYANG 공식 대리점에서 제품을 확인하고 상담받아보세요.",
   alternates: { canonical: "/dealers" },
 };

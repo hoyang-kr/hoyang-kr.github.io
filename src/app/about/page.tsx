@@ -7,7 +7,7 @@ import { PageIntro } from "@/components/ui/page-intro";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "브랜드",
+  title: "Brand",
   description: `${siteConfig.brandNameKo}의 브랜드 방향과 제품에 대한 생각을 소개합니다.`,
   alternates: {
     canonical: "/about",

@@ -5,7 +5,7 @@ import { PageIntro } from "@/components/ui/page-intro";
 import { collections } from "@/data/collections";
 
 export const metadata: Metadata = {
-  title: "컬렉션",
+  title: "Collections",
   description: "욕실 액세서리 컬렉션을 둘러보세요.",
   alternates: {
     canonical: "/collections",

@@ -6,7 +6,7 @@ import { isPreviewRelease } from "@/config/launch-data";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "개인정보처리방침",
+  title: "Privacy Policy",
   description:
     siteConfig.legal.privacyPolicyStatus === "final"
       ? "개인정보처리방침입니다."
